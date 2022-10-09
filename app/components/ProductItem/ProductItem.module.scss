@@ -1,0 +1,36 @@
+.wrap {
+  @apply min-w-[255px] max-w-[255px] grid;
+  grid-template-rows: 1.5fr 0.2fr 1fr 0.1fr;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.27);
+}
+.wrapImage {
+  @apply grid justify-center p-5 relative;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.addToCart {
+  @apply bg-black p-1 z-20 relative flex justify-center items-center gap-5;
+}
+
+.icon {
+  @apply cursor-pointer;
+}
+
+.title {
+  @apply font-semibold text-[18px] text-[#282828] mt-[3px] block mb-auto flex-grow-[23];
+}
+
+.price {
+  @apply text-[15px] text-[#1E1D1D];
+}
+
+.wrapTitlePrice {
+  @apply flex flex-col px-[13px];
+}
+
+.wrapPrice {
+  @apply flex justify-between mt-[9px] mt-auto;
+}
