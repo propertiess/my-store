@@ -1,0 +1,12 @@
+.nav {
+  @apply bg-white bg-opacity-95 fixed bottom-0 left-0 z-20 w-full py-[10px] px-[3px] shadow-2xl;
+}
+.list {
+  @apply flex items-center justify-center gap-14;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    @apply invisible;
+  }
+}
