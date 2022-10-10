@@ -3,6 +3,11 @@
   grid-template-rows: 1.5fr 0.2fr 1fr 0.1fr;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.27);
 }
+
+.list {
+  @apply flex items-center justify-center gap-14;
+}
+
 .wrapImage {
   @apply grid justify-center p-5 relative;
   transition: transform 0.3s ease;
