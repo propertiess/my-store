@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { FC, ReactNode } from 'react';
 import Header from '../components/Header/Header';
+import Toolbar from '../components/Toolbar/Toolbar';
 
 type TLayout = {
   title: string;
@@ -18,6 +19,7 @@ const Layout: FC<TLayout> = ({ title, description, children }) => {
       <Header />
       <main>{children}</main>
       <footer></footer>
+      <Toolbar />
     </>
   );
 };

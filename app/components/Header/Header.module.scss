@@ -28,9 +28,15 @@
 }
 
 .icon {
-  @apply cursor-pointer;
+  @apply cursor-pointer invisible;
 }
 
 .logo {
   @apply text-white text-2xl uppercase font-medium;
+}
+
+@media (min-width: 768px) {
+  .icon {
+    @apply visible;
+  }
 }
