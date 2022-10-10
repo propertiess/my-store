@@ -1,0 +1,6 @@
+.counter {
+  @apply flex gap-5 my-3 items-center;
+  button {
+    @apply border rounded-2xl p-[15px];
+  }
+}
