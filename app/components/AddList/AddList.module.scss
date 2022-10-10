@@ -1,0 +1,11 @@
+.wrap {
+  @apply container p-[10px] flex flex-col gap-5;
+}
+
+.list {
+  @apply flex gap-5 flex-col mb-[55px];
+}
+
+.title {
+  @apply font-semibold text-[17px];
+}
