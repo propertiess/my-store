@@ -1,7 +1,7 @@
 import { FC, HTMLAttributes } from 'react';
-import { IToolbar } from '../../types/toolbar.interface';
+import { IToolbar } from '@interfaces/toolbar.interface';
 import classes from './IconItem.module.scss';
-import { ICartIcon } from '../../types/cartIcon.interface';
+import { ICartIcon } from '@interfaces/cartIcon.interface';
 
 interface Props extends HTMLAttributes<HTMLLIElement> {
   item: IToolbar | ICartIcon;

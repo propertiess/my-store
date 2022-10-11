@@ -1,8 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next';
-import Layout from '../app/layout/Layout';
-import Products from '../app/components/Products/Products';
-import { fakeStoreAPI } from '../app/api/fakeStore/fakeStoreAPI';
-import { IProduct } from '../app/types/product.interface';
+import Layout from '@layout/Layout';
+import Products from '@components/Products/Products';
+import { fakeStoreService } from '@services/fakeStore/fakeStoreService';
+import { IProduct } from '@interfaces/product.interface';
 
 interface Props {
   products: IProduct[];
@@ -19,7 +19,7 @@ const Home: NextPage<Props> = ({ products }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const products = await fakeStoreAPI.fetchProducts();
+  const products = await fakeStoreService.fetchProducts();
   return {
     props: {
       products

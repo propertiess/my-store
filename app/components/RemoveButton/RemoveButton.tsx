@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { usePurchases } from '../../hooks/usePurchases';
+import { usePurchases } from '@hooks/usePurchases';
 import classes from './RemoveButton.module.scss';
 
 type Props = {

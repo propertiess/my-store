@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import classes from './Toolbar.module.scss';
-import IconItem from '../IconItem/IconItem';
-import { useToolbarIcon } from '../../hooks/useToolbarIcon';
+import IconItem from '@components/IconItem/IconItem';
+import { useToolbarIcon } from '@hooks/useToolbarIcon';
 
 type Props = {};
 

@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import { IProduct } from '../../types/product.interface';
+import { IProduct } from '@interfaces/product.interface';
 import classes from './AddItem.module.scss';
 import Image from 'next/image';
-import CounterProduct from '../CounterProduct/CounterProduct';
-import RemoveButton from '../RemoveButton/RemoveButton';
+import CounterProduct from '@components/CounterProduct/CounterProduct';
+import RemoveButton from '@components/RemoveButton/RemoveButton';
 
 type Props = {
   product: IProduct;

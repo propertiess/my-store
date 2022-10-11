@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import classes from './Header.module.scss';
 import { Bars3Icon, ShoppingBagIcon } from '@heroicons/react/24/outline';
-import { useModal } from '../../hooks/useModal';
-import ModalList from '../ModalList/ModalList';
-import IconItem from '../IconItem/IconItem';
-import { useToolbarIcon } from '../../hooks/useToolbarIcon';
+import { useModal } from '@hooks/useModal';
+import ModalList from '@components/ModalList/ModalList';
+import IconItem from '@components/IconItem/IconItem';
+import { useToolbarIcon } from '@hooks/useToolbarIcon';
 
 type Props = {};
 

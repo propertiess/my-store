@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { PurchasesContext } from '../context/PurchasesContext';
-import { IProduct } from '../types/product.interface';
+import { PurchasesContext } from '@context/PurchasesContext';
+import { IProduct } from '@interfaces/product.interface';
 
 export const usePurchases = () => {
   const { setBasket, setFavourite, basket, favourite } =

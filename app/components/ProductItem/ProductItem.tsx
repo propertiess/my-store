@@ -1,11 +1,11 @@
 import React, { FC, useEffect } from 'react';
 import classes from './ProductItem.module.scss';
-import { IProduct } from '../../types/product.interface';
+import { IProduct } from '@interfaces/product.interface';
 import Image from 'next/image';
-import { useArray } from '../../hooks/useArray';
-import IconItem from '../IconItem/IconItem';
-import { useCartIcon } from '../../hooks/useCartIcon';
-import { usePurchases } from '../../hooks/usePurchases';
+import { useArray } from '@hooks/useArray';
+import IconItem from '@components/IconItem/IconItem';
+import { useCartIcon } from '@hooks/useCartIcon';
+import { usePurchases } from '@hooks/usePurchases';
 
 type Props = {
   product: IProduct;

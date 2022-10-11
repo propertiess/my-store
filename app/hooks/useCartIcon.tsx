@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ICartIcon } from '../types/cartIcon.interface';
+import { ICartIcon } from '@interfaces/cartIcon.interface';
 import {
   HeartIcon as HeartIconOutline,
   ShoppingCartIcon as ShoppingCartIconOutline

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { IProduct } from '../../types/product.interface';
-import AddItem from '../AddItem/AddItem';
+import { IProduct } from '@interfaces/product.interface';
+import AddItem from '@components/AddItem/AddItem';
 import classes from './AddList.module.scss';
 
 interface Props {

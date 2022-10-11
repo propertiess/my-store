@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom';
-import { usePurchases } from '../usePurchases';
+import { usePurchases } from '@hooks/usePurchases';
 import { act, cleanup, renderHook } from '@testing-library/react';
-import { PurchasesProvider } from '../../context/PurchasesContext';
+import { PurchasesProvider } from '@context/PurchasesContext';
 import { ReactNode } from 'react';
 import { afterEach } from '@jest/globals';
-import { IProduct } from '../../types/product.interface';
+import { IProduct } from '@interfaces/product.interface';
 
 const productMock: IProduct = {
   id: 1,
