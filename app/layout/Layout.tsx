@@ -2,6 +2,8 @@ import Head from 'next/head';
 import { FC, ReactNode } from 'react';
 import Header from '../components/Header/Header';
 import Toolbar from '../components/Toolbar/Toolbar';
+import Loading from '../components/Loading/Loading';
+import classes from './Layout.module.scss';
 
 type TLayout = {
   title: string;
@@ -17,7 +19,12 @@ const Layout: FC<TLayout> = ({ title, description, children }) => {
         <meta name='description' content={description} />
       </Head>
       <Header />
-      <main>{children}</main>
+      <main className={classes.main}>
+        <>
+          <Loading />
+          {children}
+        </>
+      </main>
       <footer></footer>
       <Toolbar />
     </>

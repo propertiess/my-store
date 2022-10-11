@@ -62,7 +62,7 @@ export const useToolbarIcon = () => {
   const router = useRouter();
 
   useEffect(() => {
-    setActiveItem(window.location.pathname);
+    setActiveItem(router.asPath);
   }, []);
 
   const setActiveItem = (pathName: string) => {
