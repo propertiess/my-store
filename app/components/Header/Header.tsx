@@ -36,7 +36,10 @@ const Header: FC<Props> = ({}) => {
           <IconItem
             key={el.id}
             item={el}
-            onClick={() => setActiveItem(el.path)}
+            onClick={() => {
+              toggleShow();
+              setActiveItem(el.path);
+            }}
           />
         ))}
       </ModalList>
