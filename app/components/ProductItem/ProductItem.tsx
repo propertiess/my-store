@@ -48,13 +48,10 @@ const ProductItem: FC<Props> = ({ product }) => {
 
   return (
     <div className={classes.wrap}>
-      <div className={classes.wrapImage}>
-        <Image
-          src={product.image}
-          alt={product.title}
-          width={103}
-          height={146}
-        />
+      <div className={classes.container}>
+        <div className={classes.wrapImage}>
+          <Image src={product.image} alt={product.title} layout='fill' />
+        </div>
       </div>
       <div className={classes.addToCart}>
         <ul className={classes.list}>

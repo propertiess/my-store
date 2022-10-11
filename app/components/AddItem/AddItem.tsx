@@ -13,7 +13,9 @@ type Props = {
 const AddItem: FC<Props> = ({ product, type }) => {
   return (
     <li className={classes.item}>
-      <Image src={product.image} width={100} height={100} alt={product.title} />
+      <span className={classes.wrapImage}>
+        <Image src={product.image} alt={product.title} layout='fill' />
+      </span>
       <div>
         <p className={classes.price}>$ {product.price}</p>
         <h6>{product.title}</h6>

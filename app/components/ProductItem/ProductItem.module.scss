@@ -8,12 +8,15 @@
   @apply flex items-center justify-center gap-14;
 }
 
-.wrapImage {
+.container {
   @apply grid justify-center p-5 relative;
   transition: transform 0.3s ease;
   &:hover {
     transform: scale(1.1);
   }
+}
+.wrapImage {
+  @apply w-[140px] h-auto relative;
 }
 
 .addToCart {
