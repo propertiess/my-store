@@ -3,6 +3,7 @@ import { IProduct } from '../../types/product.interface';
 import classes from './AddItem.module.scss';
 import Image from 'next/image';
 import CounterProduct from '../CounterProduct/CounterProduct';
+import RemoveButton from '../RemoveButton/RemoveButton';
 
 type Props = {
   product: IProduct;
@@ -20,6 +21,7 @@ const AddItem: FC<Props> = ({ product, type }) => {
           <CounterProduct id={product.id} amount={product.amount!} />
         )}
       </div>
+      <RemoveButton id={product.id} type={type} />
     </li>
   );
 };
