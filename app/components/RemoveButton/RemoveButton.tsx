@@ -12,14 +12,22 @@ const RemoveButton: FC<Props> = ({ id, type }) => {
 
   if (type === 'favourite') {
     return (
-      <button className={classes.btn} onClick={() => removeFromFavourite(id)}>
+      <button
+        className={classes.btn}
+        data-testid='remove-btn'
+        onClick={() => removeFromFavourite(id)}
+      >
         Удалить
       </button>
     );
   }
 
   return (
-    <button className={classes.btn} onClick={() => removeFromBasket(id)}>
+    <button
+      className={classes.btn}
+      data-testid='remove-btn'
+      onClick={() => removeFromBasket(id)}
+    >
       Удалить
     </button>
   );

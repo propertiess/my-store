@@ -12,7 +12,7 @@ type Props = {
 
 const AddItem: FC<Props> = ({ product, type }) => {
   return (
-    <li className={classes.item}>
+    <li className={classes.item} data-testid='add-item'>
       <span className={classes.wrapImage}>
         <Image src={product.image} alt={product.title} layout='fill' />
       </span>

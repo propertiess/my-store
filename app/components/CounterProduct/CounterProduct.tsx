@@ -11,7 +11,7 @@ const CounterProduct: FC<Props> = ({ amount, id }) => {
   const { setAmountBasketProduct } = usePurchases();
 
   return (
-    <div className={classes.counter}>
+    <div className={classes.counter} data-testid='counter-product'>
       <button onClick={() => setAmountBasketProduct(id, amount + 1)}>+</button>
       <p>{amount}</p>
       <button onClick={() => setAmountBasketProduct(id, amount - 1)}>-</button>

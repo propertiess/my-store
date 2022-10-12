@@ -11,11 +11,11 @@ const IconItem: FC<Props> = ({ item, ...other }) => {
   return (
     <>
       {(item as IToolbar)?.active || (item as ICartIcon)?.added ? (
-        <li className={classes.icon} {...other}>
+        <li className={classes.icon} data-testid='icon-item-solid' {...other}>
           {item.solid}
         </li>
       ) : (
-        <li className={classes.icon} {...other}>
+        <li className={classes.icon} data-testid='icon-item-outline' {...other}>
           {item.outline}
         </li>
       )}

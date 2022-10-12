@@ -14,7 +14,7 @@ const Header: FC<Props> = ({}) => {
 
   return (
     <>
-      <header className={classes.header}>
+      <header className={classes.header} data-testid='header'>
         <nav>
           <ul className={classes.list}>
             <>

@@ -9,7 +9,7 @@ type Props = {
 
 const Products: FC<Props> = ({ products }) => {
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} data-testid='products-list'>
       {products.map(product => (
         <ProductItem key={product.id} product={product} />
       ))}

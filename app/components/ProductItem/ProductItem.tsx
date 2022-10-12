@@ -29,6 +29,7 @@ const ProductItem: FC<Props> = ({ product }) => {
   };
 
   useEffect(() => {
+    if (!basket) return;
     if (Array.isArray(basket.products)) {
       basket.products.forEach(el => {
         if (el.id === product.id) {
@@ -37,6 +38,7 @@ const ProductItem: FC<Props> = ({ product }) => {
       });
     }
 
+    if (!favourite) return;
     if (Array.isArray(favourite.products)) {
       favourite.products?.forEach(el => {
         if (el.id === product.id) {
@@ -47,7 +49,7 @@ const ProductItem: FC<Props> = ({ product }) => {
   }, [basket, favourite]);
 
   return (
-    <div className={classes.wrap}>
+    <div className={classes.wrap} data-testid='product-item'>
       <div className={classes.container}>
         <div className={classes.wrapImage}>
           <Image src={product.image} alt={product.title} layout='fill' />
@@ -59,6 +61,7 @@ const ProductItem: FC<Props> = ({ product }) => {
             <IconItem
               key={item.id}
               item={item}
+              data-testid={'icons'}
               onClick={() => handler(item.id, item.added)}
             />
           ))}
@@ -72,6 +75,7 @@ const ProductItem: FC<Props> = ({ product }) => {
             {arr.map(el => (
               <Image
                 key={el}
+                data-testid='stars'
                 src='/star.svg'
                 height={13}
                 width={13}
