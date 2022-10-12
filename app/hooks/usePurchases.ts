@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { PurchasesContext } from '@context/PurchasesContext';
 import { IProduct } from '@interfaces/product.interface';
 
@@ -50,6 +50,15 @@ export const usePurchases = () => {
     });
   };
 
+  const getFinalSum = useMemo(() => {
+    if (basket) {
+      return basket.products
+        .reduce((acc, el) => (acc += el.amount! * el.price), 0)
+        .toFixed(2);
+    }
+    return 0;
+  }, [basket]);
+
   return {
     addToBasket,
     addToFavourite,
@@ -57,6 +66,7 @@ export const usePurchases = () => {
     removeFromFavourite,
     setAmountBasketProduct,
     favourite,
-    basket
+    basket,
+    getFinalSum
   };
 };

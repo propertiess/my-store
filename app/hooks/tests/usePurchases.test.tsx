@@ -3,10 +3,9 @@ import { usePurchases } from '@hooks/usePurchases';
 import { act, cleanup, renderHook } from '@testing-library/react';
 import { PurchasesProvider } from '@context/PurchasesContext';
 import { ReactNode } from 'react';
-import { afterEach } from '@jest/globals';
 import { IProduct } from '@interfaces/product.interface';
 
-const productMock: IProduct = {
+const mockProduct: IProduct = {
   id: 1,
   amount: 1,
   title: 'Test',
@@ -35,9 +34,7 @@ beforeEach(() => {
   result = mockHook();
 });
 
-afterEach(() => {
-  cleanup();
-});
+afterAll(cleanup);
 
 describe('Purchases', () => {
   test('defined', () => {
@@ -49,60 +46,55 @@ describe('Purchases', () => {
     expect(result.current.basket.products).toEqual([]);
     expect(result.current.favourite.products).toEqual([]);
   });
-});
 
-describe('Basket & Favourite', () => {
-  test('added products correctly', () => {
-    expect(result.current.basket.products.length).toBe(0);
-    expect(result.current.favourite.products.length).toBe(0);
+  test('getFinalSum work correctly', () => {
+    expect(parseInt(result.current.getFinalSum.toString())).toBe(0);
 
     act(() => {
-      result.current.addToBasket(productMock);
+      result.current.addToBasket(mockProduct);
     });
+    expect(result.current.getFinalSum).toBe('100.00');
 
     act(() => {
-      result.current.addToFavourite(productMock);
+      result.current.setAmountBasketProduct(1, 6);
     });
-
-    expect(result.current.basket.products.length).toBe(1);
-    expect(result.current.favourite.products.length).toBe(1);
-
-    expect(result.current.basket.products[0]).toEqual(productMock);
-    expect(result.current.favourite.products[0]).toEqual(productMock);
+    expect(result.current.getFinalSum).toBe('600.00');
 
     act(() => {
-      result.current.addToBasket(productMock);
-    });
-    expect(result.current.basket.products.length).toBe(2);
-
-    act(() => {
-      result.current.addToFavourite(productMock);
-    });
-    expect(result.current.favourite.products.length).toBe(2);
-
-    expect(result.current.basket.products).toEqual([
-      { ...productMock },
-      { ...productMock }
-    ]);
-    expect(result.current.favourite.products).toEqual([
-      { ...productMock },
-      { ...productMock }
-    ]);
-  });
-
-  test('remove products correctly', () => {
-    act(() => {
-      result.current.addToBasket(productMock);
-    });
-
-    act(() => {
-      result.current.addToFavourite(productMock);
+      result.current.setAmountBasketProduct(1, 1);
     });
 
     act(() => {
       result.current.removeFromBasket(1);
     });
-    expect(result.current.basket.products).toEqual([]);
+  });
+});
+
+describe('Favourite', () => {
+  test('added products correctly', () => {
+    expect(result.current.favourite.products.length).toBe(0);
+
+    act(() => {
+      result.current.addToFavourite(mockProduct);
+    });
+    expect(result.current.favourite.products.length).toBe(1);
+    expect(result.current.favourite.products[0]).toEqual(mockProduct);
+
+    act(() => {
+      result.current.addToFavourite(mockProduct);
+    });
+    expect(result.current.favourite.products.length).toBe(2);
+
+    expect(result.current.favourite.products).toEqual([
+      { ...mockProduct },
+      { ...mockProduct }
+    ]);
+  });
+
+  test('remove products correctly', () => {
+    act(() => {
+      result.current.addToFavourite(mockProduct);
+    });
 
     act(() => {
       result.current.removeFromFavourite(1);
@@ -112,9 +104,40 @@ describe('Basket & Favourite', () => {
 });
 
 describe('Basket', () => {
+  test('added products correctly', () => {
+    expect(result.current.basket.products.length).toBe(0);
+
+    act(() => {
+      result.current.addToBasket(mockProduct);
+    });
+    expect(result.current.basket.products.length).toBe(1);
+    expect(result.current.basket.products[0]).toEqual(mockProduct);
+
+    act(() => {
+      result.current.addToBasket(mockProduct);
+    });
+    expect(result.current.basket.products.length).toBe(2);
+
+    expect(result.current.basket.products).toEqual([
+      { ...mockProduct },
+      { ...mockProduct }
+    ]);
+  });
+
+  test('remove products correctly', () => {
+    act(() => {
+      result.current.addToBasket(mockProduct);
+    });
+
+    act(() => {
+      result.current.removeFromBasket(1);
+    });
+    expect(result.current.basket.products).toEqual([]);
+  });
+
   test('change amount of products correctly', () => {
     act(() => {
-      result.current.addToBasket(productMock);
+      result.current.addToBasket(mockProduct);
     });
     expect(result.current.basket.products[0].amount).toBe(1);
 

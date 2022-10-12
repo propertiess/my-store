@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { IProduct } from '@interfaces/product.interface';
 import AddItem from '@components/AddItem/AddItem';
 import classes from './AddList.module.scss';
+import { usePurchases } from '@hooks/usePurchases';
 
 interface Props {
   title: string;
@@ -11,12 +12,16 @@ interface Props {
 }
 
 const AddList: FC<Props> = ({ title, nothingTitle, products, type }) => {
+  const { getFinalSum } = usePurchases();
   return (
     <div className={classes.wrap} data-testid='addList'>
       {!!products.length ? (
         <h5 className={classes.title}>{title}</h5>
       ) : (
         <h5 className={classes.title}>{nothingTitle}</h5>
+      )}
+      {!!getFinalSum && type === 'basket' && (
+        <p className={classes.finalSum}>Итого: $ {getFinalSum}</p>
       )}
       <ul className={classes.list} data-testid='list-addItem'>
         {products.map(prod => (
