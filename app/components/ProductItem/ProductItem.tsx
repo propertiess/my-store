@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, HTMLAttributes, useEffect } from 'react';
 import classes from './ProductItem.module.scss';
 import { IProduct } from '@interfaces/product.interface';
 import Image from 'next/image';
@@ -6,16 +6,17 @@ import { useArray } from '@hooks/useArray';
 import IconItem from '@components/IconItem/IconItem';
 import { useCartIcon } from '@hooks/useCartIcon';
 import { usePurchases } from '@hooks/usePurchases';
+import { useRouter } from 'next/router';
 
-type Props = {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   product: IProduct;
-};
+}
 
 const ProductItem: FC<Props> = ({ product }) => {
   const { arr } = useArray(Math.ceil(product.rating.rate));
   const { addToBasket, addToFavourite } = usePurchases();
   const { cartIcons, setAdded } = useCartIcon();
-
+  const router = useRouter();
   const { basket, favourite } = usePurchases();
 
   const handler = (id: number, added: boolean) => {
@@ -46,7 +47,7 @@ const ProductItem: FC<Props> = ({ product }) => {
         }
       });
     }
-  }, [basket, favourite]);
+  }, [basket, favourite]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className={classes.wrap} data-testid='product-item'>
@@ -68,7 +69,12 @@ const ProductItem: FC<Props> = ({ product }) => {
         </ul>
       </div>
       <div className={classes.wrapTitlePrice}>
-        <h4 className={classes.title}>{product.title}</h4>
+        <h4
+          className={classes.title}
+          onClick={() => router.push(`/products/${product.id}`)}
+        >
+          {product.title}
+        </h4>
         <div className={classes.wrapPrice}>
           <p className={classes.price}>$ {product.price}</p>
           <div>

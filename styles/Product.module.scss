@@ -1,0 +1,16 @@
+.wrap {
+  @apply flex flex-col gap-5 p-3;
+  > button {
+    @apply text-end;
+  }
+  > h1,
+  h5 {
+    @apply font-semibold text-[17px];
+  }
+}
+.row {
+  @apply flex justify-center py-5;
+}
+.wrapImage {
+  @apply relative w-[300px] h-[300px];
+}
