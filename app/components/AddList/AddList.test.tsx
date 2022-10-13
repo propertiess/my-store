@@ -1,10 +1,11 @@
 import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import AddList from '@components/AddList/AddList';
-import { mockProducts } from '@components/Products/Products.test';
 import { IProduct } from '@interfaces/product.interface';
+import { getMockProducts } from '@helpers/getMockProducts';
 
-export const mockEmptyProducts: IProduct[] = [];
+const mockEmptyProducts: IProduct[] = [];
+const mockProducts: IProduct[] = getMockProducts();
 
 beforeEach(() => {
   render(

@@ -10,6 +10,7 @@ const customJestConfig = {
   moduleNameMapper: {
     '^@services/(.*)': '<rootDir>/app/services/$1',
     '^@components/(.*)': '<rootDir>/app/components/$1',
+    '^@helpers/(.*)': '<rootDir>/app/helpers/$1',
     '^@context/(.*)': '<rootDir>/app/context/$1',
     '^@hooks/(.*)': '<rootDir>/app/hooks/$1',
     '^@layout/(.*)': '<rootDir>/app/layout/$1',

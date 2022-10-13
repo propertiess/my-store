@@ -2,14 +2,12 @@ import { IToolbar } from '@interfaces/toolbar.interface';
 import {
   HeartIcon as HeartIconOutline,
   HomeIcon as HomeIconOutline,
-  MagnifyingGlassCircleIcon as MagnifyingGlassCircleIconOutline,
   ShoppingCartIcon as ShoppingCartIconOutline,
   UserIcon as UserIconOutline
 } from '@heroicons/react/24/outline';
 import {
   HeartIcon as HeartIconSolid,
   HomeIcon as HomeIconSolid,
-  MagnifyingGlassCircleIcon as MagnifyingGlassCircleIconSolid,
   ShoppingCartIcon as ShoppingCartIconSolid,
   UserIcon as UserIconSolid
 } from '@heroicons/react/24/solid';
@@ -31,27 +29,20 @@ export const useToolbarIcon = () => {
     },
     {
       id: 2,
-      path: '',
-      active: false,
-      outline: <MagnifyingGlassCircleIconOutline {...TOOLBAR_COLOR} />,
-      solid: <MagnifyingGlassCircleIconSolid {...TOOLBAR_COLOR} />
-    },
-    {
-      id: 3,
       path: '/lk/basket',
       active: false,
       outline: <ShoppingCartIconOutline {...TOOLBAR_COLOR} />,
       solid: <ShoppingCartIconSolid {...TOOLBAR_COLOR} />
     },
     {
-      id: 4,
+      id: 3,
       path: '/lk/favourite',
       active: false,
       outline: <HeartIconOutline {...TOOLBAR_COLOR} />,
       solid: <HeartIconSolid {...TOOLBAR_COLOR} />
     },
     {
-      id: 5,
+      id: 4,
       path: '/lk/profile',
       active: false,
       outline: <UserIconOutline {...TOOLBAR_COLOR} />,
@@ -63,6 +54,7 @@ export const useToolbarIcon = () => {
 
   useEffect(() => {
     if (router) setActiveItem(router.asPath);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setActiveItem = (pathName: string) => {

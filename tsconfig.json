@@ -19,6 +19,7 @@
       "@services/*": ["services/*"],
       "@components/*": ["components/*"],
       "@context/*": ["context/*"],
+      "@helpers/*": ["helpers/*"],
       "@hooks/*": ["hooks/*"],
       "@layout/*": ["layout/*"],
       "@interfaces/*": ["types/*"],
