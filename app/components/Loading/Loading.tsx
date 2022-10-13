@@ -30,7 +30,7 @@ const Loading: FC<Props> = ({}) => {
     <>
       {loading && (
         <div className={classes.wrap}>
-          <ClipLoader />
+          <ClipLoader className={classes.loader} />
         </div>
       )}
     </>
