@@ -35,10 +35,12 @@ describe('IconItem', () => {
   test('Toolbar icon to be in the document', () => {
     render(<IconItem item={mockItemToolbar} />);
     expect(screen.getByTestId('icon-item-solid')).toBeInTheDocument();
+    expect(screen.queryByTestId('icon-item-outline')).toBeNull();
   });
 
   test('CartIcon to be in the document', () => {
     render(<IconItem item={mockIconCarts} />);
     expect(screen.getByTestId('icon-item-outline')).toBeInTheDocument();
+    expect(screen.queryByTestId('icon-item-solid')).toBeNull();
   });
 });
