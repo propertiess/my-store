@@ -2,14 +2,12 @@ import { IToolbar } from '@interfaces/toolbar.interface';
 import {
   HeartIcon as HeartIconOutline,
   HomeIcon as HomeIconOutline,
-  ShoppingCartIcon as ShoppingCartIconOutline,
-  UserIcon as UserIconOutline
+  ShoppingBagIcon as ShoppingCartIconOutline
 } from '@heroicons/react/24/outline';
 import {
   HeartIcon as HeartIconSolid,
   HomeIcon as HomeIconSolid,
-  ShoppingCartIcon as ShoppingCartIconSolid,
-  UserIcon as UserIconSolid
+  ShoppingBagIcon as ShoppingCartIconSolid
 } from '@heroicons/react/24/solid';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -40,13 +38,6 @@ export const useToolbarIcon = () => {
       active: false,
       outline: <HeartIconOutline {...TOOLBAR_COLOR} />,
       solid: <HeartIconSolid {...TOOLBAR_COLOR} />
-    },
-    {
-      id: 4,
-      path: '/lk/profile',
-      active: false,
-      outline: <UserIconOutline {...TOOLBAR_COLOR} />,
-      solid: <UserIconSolid {...TOOLBAR_COLOR} />
     }
   ]);
 

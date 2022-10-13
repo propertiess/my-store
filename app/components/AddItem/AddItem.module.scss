@@ -1,5 +1,8 @@
 .item {
   @apply flex gap-5 border rounded-2xl p-[16px];
+  .title {
+    @apply cursor-pointer hover:text-[#4495d4];
+  }
 }
 .wrapImage {
   @apply relative h-[100px] w-[100px] block;

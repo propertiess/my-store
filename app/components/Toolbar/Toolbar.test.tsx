@@ -17,6 +17,6 @@ describe('Toolbar', () => {
 
   test('list render icons correctly', () => {
     const listEl = screen.getByTestId('toolbar-list');
-    expect(listEl.childElementCount).toBe(4);
+    expect(listEl.childElementCount).toBe(3);
   });
 });

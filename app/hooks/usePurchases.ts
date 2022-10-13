@@ -52,10 +52,18 @@ export const usePurchases = () => {
 
   const getFinalSum = useMemo(() => {
     if (basket) {
-      return basket.products
-        .reduce((acc, el) => (acc += el.amount! * el.price), 0)
-        .toFixed(2);
+      return parseFloat(
+        basket.products
+          .reduce((acc, el) => (acc += el.amount! * el.price), 0)
+          .toFixed(2)
+      );
     }
+    return 0;
+  }, [basket]);
+
+  const getQuantityBasketProducts = useMemo(() => {
+    if (basket)
+      return basket.products.reduce((acc, el) => (acc += el.amount!), 0);
     return 0;
   }, [basket]);
 
@@ -67,6 +75,7 @@ export const usePurchases = () => {
     setAmountBasketProduct,
     favourite,
     basket,
-    getFinalSum
+    getFinalSum,
+    getQuantityBasketProducts
   };
 };

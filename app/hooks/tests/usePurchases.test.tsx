@@ -53,12 +53,12 @@ describe('Purchases', () => {
     act(() => {
       result.current.addToBasket(mockProduct);
     });
-    expect(result.current.getFinalSum).toBe('100.00');
+    expect(result.current.getFinalSum).toBe(100);
 
     act(() => {
       result.current.setAmountBasketProduct(1, 6);
     });
-    expect(result.current.getFinalSum).toBe('600.00');
+    expect(result.current.getFinalSum).toBe(600);
 
     act(() => {
       result.current.setAmountBasketProduct(1, 1);

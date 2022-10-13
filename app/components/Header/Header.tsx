@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import classes from './Header.module.scss';
-import { Bars3Icon, ShoppingBagIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon } from '@heroicons/react/24/outline';
 import { useModal } from '@hooks/useModal';
 import ModalList from '@components/ModalList/ModalList';
 import IconItem from '@components/IconItem/IconItem';
@@ -25,9 +25,6 @@ const Header: FC<Props> = ({}) => {
               />
             </>
             <li className={classes.logo}>My Store</li>
-            <li>
-              <ShoppingBagIcon className={classes.icon} color='white' />
-            </li>
           </ul>
         </nav>
       </header>

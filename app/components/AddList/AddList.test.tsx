@@ -29,8 +29,6 @@ describe('AddList', () => {
 
   test('data is correct', () => {
     screen.getByText('Корзина');
-    const addListEl = screen.getByTestId('addList');
-    expect(addListEl.childElementCount).toBe(2);
     expect(screen.getByTestId('list-addItem').childElementCount).toBe(3);
     cleanup();
 

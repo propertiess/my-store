@@ -23,6 +23,6 @@ describe('Header', () => {
 
   test('list render children correctly', () => {
     const ulEl = screen.getByRole('list');
-    expect(ulEl.childElementCount).toBe(3);
+    expect(ulEl.childElementCount).toBe(2);
   });
 });
