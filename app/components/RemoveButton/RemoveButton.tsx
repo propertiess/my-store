@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { usePurchases } from '@hooks/usePurchases';
 import classes from './RemoveButton.module.scss';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 
 type Props = {
   id: number;
@@ -17,7 +18,7 @@ const RemoveButton: FC<Props> = ({ id, type }) => {
         data-testid='remove-btn'
         onClick={() => removeFromFavourite(id)}
       >
-        Удалить
+        <XMarkIcon width={24} height={24} />
       </button>
     );
   }
@@ -28,7 +29,7 @@ const RemoveButton: FC<Props> = ({ id, type }) => {
       data-testid='remove-btn'
       onClick={() => removeFromBasket(id)}
     >
-      Удалить
+      <XMarkIcon width={24} height={24} />
     </button>
   );
 };
