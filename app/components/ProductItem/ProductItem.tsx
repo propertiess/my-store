@@ -7,6 +7,7 @@ import IconItem from '@components/IconItem/IconItem';
 import { useCartIcon } from '@hooks/useCartIcon';
 import { usePurchases } from '@hooks/usePurchases';
 import { useRouter } from 'next/router';
+import StarList from '@components/StarList/StarList';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   product: IProduct;
@@ -77,18 +78,7 @@ const ProductItem: FC<Props> = ({ product }) => {
         </h4>
         <div className={classes.wrapPrice}>
           <p className={classes.price}>$ {product.price}</p>
-          <div>
-            {arr.map(el => (
-              <Image
-                key={el}
-                data-testid='stars'
-                src='/star.svg'
-                height={13}
-                width={13}
-                alt={product.rating.rate.toString()}
-              />
-            ))}
-          </div>
+          <StarList quantity={arr} />
         </div>
       </div>
     </div>

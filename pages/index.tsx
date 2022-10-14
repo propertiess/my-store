@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Layout from '@layout/Layout';
 import Products from '@components/Products/Products';
-import { fakeStoreService } from '@services/fakeStore/fakeStoreService';
+import { StoreService } from '@services/Store/storeService';
 import { IProduct } from '@interfaces/product.interface';
 import Search from '@components/Search/Search';
 import { useSearch } from '@hooks/useSearch';
@@ -23,7 +23,7 @@ const Home: NextPage<Props> = ({ products }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const products = await fakeStoreService.fetchProducts();
+  const products = await StoreService.fetchProducts();
   return {
     props: {
       products
