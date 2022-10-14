@@ -1,5 +1,5 @@
 .wrap {
-  @apply absolute z-20 left-0 bottom-0 h-full w-full bg-white flex justify-center;
+  @apply fixed z-20 left-0 bottom-0 h-full w-full bg-white flex justify-center;
 }
 
 .loader {

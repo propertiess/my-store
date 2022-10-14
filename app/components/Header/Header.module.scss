@@ -20,7 +20,7 @@
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
 
-  @apply p-3;
+  @apply p-3 relative z-30;
 }
 
 .list {
@@ -28,7 +28,7 @@
 }
 
 .icon {
-  @apply cursor-pointer invisible w-[30px] h-[30px];
+  @apply cursor-pointer invisible w-[30px] h-[30px] fixed;
 }
 
 .logo {
