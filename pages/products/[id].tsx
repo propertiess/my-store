@@ -17,7 +17,9 @@ const Product: NextPage<Props> = ({ product }) => {
   return (
     <Layout title={product.title} description={product.description}>
       <div className={classes.wrap}>
-        <button onClick={() => router.back()}>Назад</button>
+        <button className={classes.btn} onClick={() => router.back()}>
+          Назад
+        </button>
         <div className={classes.row}>
           <div className={classes.wrapImage}>
             <Image src={product.image} alt={product.title} layout='fill' />

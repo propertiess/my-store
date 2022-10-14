@@ -1,7 +1,8 @@
 .wrap {
   @apply flex flex-col gap-5 p-3 mb-20;
-  > button {
-    @apply text-end;
+  .btn {
+    transition: background-color 0.3s ease;
+    @apply w-fit py-1 px-3 bg-[#333] rounded-2xl text-white ml-auto hover:bg-black;
   }
   > h1,
   h5 {
