@@ -4,6 +4,8 @@ import Header from '@components/Header/Header';
 import Toolbar from '@components/Toolbar/Toolbar';
 import Loading from '@components/Loading/Loading';
 import classes from './Layout.module.scss';
+import CustomMotion from '@components/CustomMotion/CustomMotion';
+import { fadeInUp } from '@animations';
 
 type TLayout = {
   title: string;
@@ -20,10 +22,10 @@ const Layout: FC<TLayout> = ({ title, description, children }) => {
       </Head>
       <Header />
       <main className={classes.main}>
-        <>
+        <CustomMotion element='section' variants={fadeInUp}>
           <Loading />
           {children}
-        </>
+        </CustomMotion>
       </main>
       <footer></footer>
       <Toolbar />

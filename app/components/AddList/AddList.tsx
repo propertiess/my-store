@@ -3,6 +3,9 @@ import { IProduct } from '@interfaces/product.interface';
 import AddItem from '@components/AddItem/AddItem';
 import classes from './AddList.module.scss';
 import { usePurchases } from '@hooks/usePurchases';
+import CustomMotion from '@components/CustomMotion/CustomMotion';
+import { fadeInUp } from '@animations';
+import { AnimatePresence } from 'framer-motion';
 
 interface Props {
   title: string;
@@ -23,11 +26,20 @@ const AddList: FC<Props> = ({ title, nothingTitle, products, type }) => {
       {!!getFinalSum && type === 'basket' && (
         <p className={classes.finalSum}>Итого: $ {getFinalSum}</p>
       )}
-      <ul className={classes.list} data-testid='list-addItem'>
-        {products.map(prod => (
-          <AddItem key={prod.id} product={prod} type={type} />
-        ))}
-      </ul>
+      <CustomMotion
+        element={'ul'}
+        variants={fadeInUp}
+        // @ts-ignore
+        layout
+        className={classes.list}
+        data-testid='list-addItem'
+      >
+        <AnimatePresence mode='popLayout'>
+          {products.map(prod => (
+            <AddItem key={prod.id} product={prod} type={type} />
+          ))}
+        </AnimatePresence>
+      </CustomMotion>
     </div>
   );
 };

@@ -16,7 +16,8 @@ const customJestConfig = {
     '^@layout/(.*)': '<rootDir>/app/layout/$1',
     '^@interfaces/(.*)': '<rootDir>/app/types/$1',
     '^@utils/(.*)': '<rootDir>/app/utils/$1',
-    '^@styles/(.*)': '<rootDir>/styles/$1'
+    '^@styles/(.*)': '<rootDir>/styles/$1',
+    '^@animations': '<rootDir>/app/animations/index'
   },
   testEnvironment: 'jest-environment-jsdom'
 };

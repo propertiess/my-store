@@ -1,5 +1,8 @@
-import { FC, HTMLAttributes, ReactNode } from 'react';
+import React, { FC, HTMLAttributes, ReactNode } from 'react';
 import classes from './ModalList.module.scss';
+import CustomMotion from '@components/CustomMotion/CustomMotion';
+import { leftFadeInOut } from '@animations';
+import { AnimatePresence } from 'framer-motion';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   active: boolean;
@@ -7,14 +10,21 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 const ModalList: FC<Props> = ({ active, children, ...other }) => {
-  if (!active) return null;
-
   return (
-    <div className={classes.wrap} {...other}>
-      <div className={classes.content} onClick={e => e.stopPropagation()}>
-        {children}
-      </div>
-    </div>
+    <AnimatePresence mode='popLayout'>
+      {active && (
+        <CustomMotion
+          element='div'
+          variants={leftFadeInOut}
+          className={classes.wrap}
+          {...other}
+        >
+          <div className={classes.content} onClick={e => e.stopPropagation()}>
+            {children}
+          </div>
+        </CustomMotion>
+      )}
+    </AnimatePresence>
   );
 };
 

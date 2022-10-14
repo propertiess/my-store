@@ -24,7 +24,8 @@
       "@layout/*": ["layout/*"],
       "@interfaces/*": ["types/*"],
       "@utils/*": ["utils/*"],
-      "@styles/*": ["../styles/*"]
+      "@animations": ["animations/index"],
+      "@styles/*": ["../styles/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

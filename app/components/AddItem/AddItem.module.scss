@@ -1,9 +1,10 @@
 .item {
-  @apply flex gap-5 border rounded-2xl p-[16px];
+  @apply grid gap-5 border rounded-2xl p-[16px];
+  grid-template-columns: 0.5fr 2fr 0.3fr;
   .title {
     @apply cursor-pointer hover:text-[#4495d4];
   }
 }
 .wrapImage {
-  @apply relative h-[100px] w-[100px] block;
+  @apply relative h-[100px] w-[100px] block justify-self-center self-center;
 }

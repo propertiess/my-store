@@ -5,6 +5,8 @@ import Image from 'next/image';
 import CounterProduct from '@components/CounterProduct/CounterProduct';
 import RemoveButton from '@components/RemoveButton/RemoveButton';
 import { useRouter } from 'next/router';
+import CustomMotion from '@components/CustomMotion/CustomMotion';
+import { fadeOutDown } from '@animations';
 
 type Props = {
   product: IProduct;
@@ -14,7 +16,14 @@ type Props = {
 const AddItem: FC<Props> = ({ product, type }) => {
   const router = useRouter();
   return (
-    <li className={classes.item} data-testid='add-item'>
+    <CustomMotion
+      element='li'
+      variants={fadeOutDown}
+      // @ts-ignore
+      layout
+      className={classes.item}
+      data-testid='add-item'
+    >
       <span className={classes.wrapImage}>
         <Image src={product.image} alt={product.title} layout='fill' />
       </span>
@@ -31,7 +40,7 @@ const AddItem: FC<Props> = ({ product, type }) => {
         )}
       </div>
       <RemoveButton id={product.id} type={type} />
-    </li>
+    </CustomMotion>
   );
 };
 
