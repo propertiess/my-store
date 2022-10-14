@@ -29,7 +29,7 @@
 
 .title {
   transition: color 0.3s ease;
-  @apply font-semibold text-[18px] text-[#282828] mt-[3px] block mb-auto flex-grow-[23] cursor-pointer hover:text-[#4495d4];
+  @apply font-semibold text-[18px] text-[#282828] mt-[3px] block mb-auto cursor-pointer hover:text-[#4495d4];
 }
 
 .price {
