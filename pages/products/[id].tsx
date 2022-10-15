@@ -1,5 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next';
-import { StoreService } from '@services/Store/storeService';
+import { ProductsService } from '@services/products/products.service';
 import { IProduct } from '@interfaces/product.interface';
 import Layout from '@layout/Layout';
 import Image from 'next/image';
@@ -50,7 +50,7 @@ const Product: NextPage<Props> = ({ product }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
-  const product = await StoreService.fetchProduct(Number(ctx.params!.id));
+  const product = await ProductsService.fetchProduct(Number(ctx.params!.id));
 
   if (!product) {
     return {

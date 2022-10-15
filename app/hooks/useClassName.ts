@@ -11,8 +11,18 @@ export const useClassName = (initial: string, to: string) => {
     setCurrClassName(initial);
   };
 
+  const removeClassName = () => {
+    setCurrClassName(initial);
+  };
+
+  const addClassName = () => {
+    setCurrClassName(`${initial} ${to}`);
+  };
+
   return {
     currClassName,
-    toggle
+    toggle,
+    addClassName,
+    removeClassName
   };
 };

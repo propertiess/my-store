@@ -1,0 +1,15 @@
+.form {
+  @apply flex flex-col gap-3 p-3;
+  .input {
+    @apply border rounded py-[3px] px-3;
+  }
+  .error {
+    box-shadow: 1px 1px 5px rgba(255, 0, 0, 0.23);
+  }
+  .btn {
+    @apply w-fit ml-auto px-3 text-white bg-[#4495d4] cursor-pointer border rounded;
+  }
+  span {
+    @apply text-red-600 text-[14px] absolute bottom-12;
+  }
+}

@@ -1,0 +1,13 @@
+.wrap {
+  @apply container p-3 flex flex-col;
+  > button {
+    @apply w-fit px-3 py-1 ml-auto border rounded;
+  }
+
+  h3 {
+    @apply capitalize font-bold text-[20px];
+  }
+  p {
+    @apply text-[13px];
+  }
+}

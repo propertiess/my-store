@@ -1,0 +1,9 @@
+.wrap {
+  @apply container px-3 bg-gray-100 rounded overflow-hidden;
+  .title {
+    @apply px-3 cursor-pointer;
+  }
+  p {
+    @apply bg-black text-white my-3 px-3 rounded;
+  }
+}

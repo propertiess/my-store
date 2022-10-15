@@ -5,9 +5,16 @@ interface Props extends HTMLAttributes<HTMLElement> {
   element: string;
   variants?: Variants;
   children?: ReactNode;
+  layout?: boolean;
 }
 
-const CustomMotion: FC<Props> = ({ element, children, variants, ...other }) => {
+const CustomMotion: FC<Props> = ({
+  element,
+  children,
+  variants,
+  layout,
+  ...other
+}) => {
   // @ts-ignore
   const Component = motion[element];
 
@@ -20,6 +27,7 @@ const CustomMotion: FC<Props> = ({ element, children, variants, ...other }) => {
       whileHover='whileHover'
       whileDrag='whileDrag'
       whileFocus='whileFocus'
+      layout={layout}
       exit='exit'
       variants={variants}
       {...other}
