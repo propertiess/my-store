@@ -6,6 +6,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
   variants?: Variants;
   children?: ReactNode;
   layout?: boolean;
+  whileInView?: boolean;
 }
 
 const CustomMotion: FC<Props> = ({
@@ -13,6 +14,7 @@ const CustomMotion: FC<Props> = ({
   children,
   variants,
   layout,
+  whileInView,
   ...other
 }) => {
   // @ts-ignore
@@ -23,7 +25,7 @@ const CustomMotion: FC<Props> = ({
       initial='initial'
       animate='animate'
       whileTap='whileTap'
-      whileInView='whileInView'
+      whileInView={whileInView ? 'whileInView' : ''}
       whileHover='whileHover'
       whileDrag='whileDrag'
       whileFocus='whileFocus'

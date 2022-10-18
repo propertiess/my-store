@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import IconItem from '@components/IconItem/IconItem';
 import { IToolbar } from '@interfaces/toolbar.interface';

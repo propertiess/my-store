@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next';
+
 import Layout from '@layout/Layout';
 import Products from '@components/Products/Products';
 import { ProductsService } from '@services/products/products.service';

@@ -6,6 +6,7 @@ const createJestConfig = nextJest({
 
 /** @type {import('jest').Config} */
 const customJestConfig = {
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleDirectories: ['node_modules', '<rootDir>/'],
   moduleNameMapper: {
     '^@services/(.*)': '<rootDir>/app/services/$1',
@@ -17,7 +18,8 @@ const customJestConfig = {
     '^@interfaces/(.*)': '<rootDir>/app/types/$1',
     '^@utils/(.*)': '<rootDir>/app/utils/$1',
     '^@styles/(.*)': '<rootDir>/styles/$1',
-    '^@animations': '<rootDir>/app/animations/index'
+    '^@animations': '<rootDir>/app/animations/index',
+    '^axios$': require.resolve('axios')
   },
   testEnvironment: 'jest-environment-jsdom'
 };

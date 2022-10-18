@@ -29,7 +29,6 @@ const AddList: FC<Props> = ({ title, nothingTitle, products, type }) => {
       <CustomMotion
         element={'ul'}
         variants={fadeInUp}
-        // @ts-ignore
         layout
         className={classes.list}
         data-testid='list-addItem'

@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import AddList from '@components/AddList/AddList';
 import { IProduct } from '@interfaces/product.interface';

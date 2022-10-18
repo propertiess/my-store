@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import ProductItem from '@components/ProductItem/ProductItem';
 import { IProduct } from '@interfaces/product.interface';

@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { usePurchases } from '@hooks/usePurchases';
 import { act, cleanup, renderHook } from '@testing-library/react';
 import { PurchasesProvider } from '@context/PurchasesContext';

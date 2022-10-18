@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import CounterProduct from '@components/CounterProduct/CounterProduct';
 

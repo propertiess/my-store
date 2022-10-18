@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { act, cleanup, renderHook } from '@testing-library/react';
 import { useClassName } from '@hooks/useClassName';
 

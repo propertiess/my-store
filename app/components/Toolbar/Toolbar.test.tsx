@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { cleanup, render, screen } from '@testing-library/react';
 import Toolbar from '@components/Toolbar/Toolbar';
 
@@ -17,6 +16,7 @@ describe('Toolbar', () => {
 
   test('list render icons correctly', () => {
     const listEl = screen.getByTestId('toolbar-list');
-    expect(listEl.childElementCount).toBe(3);
+    screen.debug(listEl);
+    expect(listEl.childElementCount).toBe(4);
   });
 });

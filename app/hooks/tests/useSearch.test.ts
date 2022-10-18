@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { act, cleanup, renderHook } from '@testing-library/react';
 import { getMockProducts } from '@helpers/getMockProducts';
 import { useSearch } from '@hooks/useSearch';

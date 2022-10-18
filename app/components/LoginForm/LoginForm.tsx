@@ -43,14 +43,20 @@ const LoginForm: FC = () => {
   }, [errors.username, errors.password]);
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={classes.form}
+      data-testid='form'
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <input
         className={username.currClassName}
+        data-testid='username'
         placeholder='username'
         {...register('username', { required: true })}
       />
       <input
         className={password.currClassName}
+        data-testid='password'
         type='password'
         placeholder='password'
         {...register('password', { required: true })}
