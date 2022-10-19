@@ -9,8 +9,8 @@ afterEach(() => {
   cleanup();
 });
 
-describe('Login', () => {
-  test('be in the document', () => {
+describe('Login form', () => {
+  test('renders', () => {
     const formEl = screen.getByTestId('form');
     expect(formEl).toBeInTheDocument();
   });

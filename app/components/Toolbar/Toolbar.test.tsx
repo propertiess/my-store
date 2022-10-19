@@ -10,13 +10,12 @@ afterEach(() => {
 });
 
 describe('Toolbar', () => {
-  test('be in the document', () => {
+  test('renders', () => {
     expect(screen.getByTestId('toolbar')).toBeInTheDocument();
   });
 
   test('list render icons correctly', () => {
     const listEl = screen.getByTestId('toolbar-list');
-    screen.debug(listEl);
     expect(listEl.childElementCount).toBe(4);
   });
 });

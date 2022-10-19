@@ -11,7 +11,7 @@ import {
   ShoppingBagIcon as ShoppingCartIconSolid,
   UserIcon as UserIconSolid
 } from '@heroicons/react/24/solid';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 
 const TOOLBAR_COLOR = {
@@ -19,32 +19,28 @@ const TOOLBAR_COLOR = {
 };
 
 export const useToolbarIcon = () => {
-  const [toolBars, setToolBars] = useState<IToolbar[]>([
+  const toolBars = useRef<IToolbar[]>([
     {
       id: 1,
       path: '/',
-      active: true,
       outline: <HomeIconOutline {...TOOLBAR_COLOR} />,
       solid: <HomeIconSolid {...TOOLBAR_COLOR} />
     },
     {
       id: 2,
       path: '/lk/basket',
-      active: false,
       outline: <ShoppingCartIconOutline {...TOOLBAR_COLOR} />,
       solid: <ShoppingCartIconSolid {...TOOLBAR_COLOR} />
     },
     {
       id: 3,
       path: '/lk/favourite',
-      active: false,
       outline: <HeartIconOutline {...TOOLBAR_COLOR} />,
       solid: <HeartIconSolid {...TOOLBAR_COLOR} />
     },
     {
       id: 4,
       path: '/lk/profile',
-      active: false,
       outline: <UserIconOutline {...TOOLBAR_COLOR} />,
       solid: <UserIconSolid {...TOOLBAR_COLOR} />
     }
@@ -54,22 +50,14 @@ export const useToolbarIcon = () => {
 
   useEffect(() => {
     if (router) setActiveItem(router.asPath);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []); // eslint-disable-line
 
   const setActiveItem = (pathName: string) => {
-    router.push(pathName).then(() => {
-      setToolBars(prev => {
-        return prev.map(el => {
-          el.active = el.path === pathName;
-          return el;
-        });
-      });
-    });
+    let ignore = router.push(pathName);
   };
 
   return {
-    toolBars,
+    toolBars: toolBars.current,
     setActiveItem
   };
 };
