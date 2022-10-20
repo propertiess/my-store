@@ -1,10 +1,10 @@
-import { FC, HTMLAttributes, useContext } from 'react';
+import { FC, HTMLAttributes } from 'react';
 import { IToolbar } from '@interfaces/toolbar.interface';
 import classes from './IconItem.module.scss';
 import { ICartIcon } from '@interfaces/cartIcon.interface';
 import Sticker from '@components/Sticker/Sticker';
 import { usePurchases } from '@hooks/usePurchases';
-import { ActivePathContext } from '@context/ActivePathContext';
+import { useRouter } from 'next/router';
 
 interface Props extends HTMLAttributes<HTMLLIElement> {
   item: IToolbar | ICartIcon;
@@ -12,10 +12,14 @@ interface Props extends HTMLAttributes<HTMLLIElement> {
 
 const IconItem: FC<Props> = ({ item, ...other }) => {
   const { getQuantityBasketProducts, favourite } = usePurchases();
-  const { path } = useContext(ActivePathContext);
+  const router = useRouter();
+  const condition = (item as IToolbar)?.path === router.asPath
+  const conditionLogin = (item as IToolbar)?.path === '/lk/profile' && router.asPath === '/lk/profile/login' 
+  
   return (
     <>
-      {(item as IToolbar)?.path === path || (item as ICartIcon)?.added ? (
+      {condition || conditionLogin ||
+      (item as ICartIcon)?.added ? (
         <li className={classes.icon} data-testid='icon-item-solid' {...other}>
           {item.solid}
           {(item as IToolbar).path === '/lk/basket' && (
