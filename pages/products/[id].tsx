@@ -1,11 +1,13 @@
+import React from 'react';
 import { GetServerSideProps, NextPage } from 'next';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { ProductsService } from '@services/products/products.service';
 import { IProduct } from '@interfaces/product.interface';
 import Layout from '@layout/Layout';
-import Image from 'next/image';
 import classes from '@styles/Product.module.scss';
-import { useRouter } from 'next/router';
 import { useArray } from '@hooks/useArray';
+import CartList from '@components/CartList/CartList';
 
 type Props = {
   product: IProduct;
@@ -14,6 +16,7 @@ type Props = {
 const Product: NextPage<Props> = ({ product }) => {
   const router = useRouter();
   const { arr } = useArray(Math.ceil(product.rating.rate));
+
   return (
     <Layout title={product.title} description={product.description}>
       <div className={classes.wrap}>
@@ -28,6 +31,7 @@ const Product: NextPage<Props> = ({ product }) => {
         <h1>
           {product.title} <br /> {product.price} $
         </h1>
+        <CartList product={product} />
         <div>
           {arr.map(el => (
             <Image

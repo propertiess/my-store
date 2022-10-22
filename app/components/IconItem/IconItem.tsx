@@ -13,13 +13,14 @@ interface Props extends HTMLAttributes<HTMLLIElement> {
 const IconItem: FC<Props> = ({ item, ...other }) => {
   const { getQuantityBasketProducts, favourite } = usePurchases();
   const router = useRouter();
-  const condition = (item as IToolbar)?.path === router.asPath
-  const conditionLogin = (item as IToolbar)?.path === '/lk/profile' && router.asPath === '/lk/profile/login' 
-  
+  const condition = (item as IToolbar)?.path === router?.asPath;
+  const conditionLogin =
+    (item as IToolbar)?.path === '/lk/profile' &&
+    router?.asPath === '/lk/profile/login';
+
   return (
     <>
-      {condition || conditionLogin ||
-      (item as ICartIcon)?.added ? (
+      {condition || conditionLogin || (item as ICartIcon)?.added ? (
         <li className={classes.icon} data-testid='icon-item-solid' {...other}>
           {item.solid}
           {(item as IToolbar).path === '/lk/basket' && (

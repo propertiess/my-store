@@ -1,0 +1,7 @@
+.list {
+  @apply flex items-center justify-center gap-14;
+}
+
+.addToCart {
+  @apply bg-black p-1 z-0 relative flex justify-center items-center gap-5;
+}
