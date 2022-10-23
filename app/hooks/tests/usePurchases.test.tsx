@@ -1,8 +1,8 @@
-import { usePurchases } from '@hooks/usePurchases';
+import { usePurchases } from '@/hooks/usePurchases';
 import { act, cleanup, renderHook } from '@testing-library/react';
-import { PurchasesProvider } from '@context/PurchasesContext';
+import { PurchasesProvider } from '@/context/PurchasesContext';
 import { ReactNode } from 'react';
-import { IProduct } from '@interfaces/product.interface';
+import { IProduct } from '@/interfaces/product.interface';
 
 const mockProduct: IProduct = {
   id: 1,

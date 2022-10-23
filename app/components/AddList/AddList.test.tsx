@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import AddList from '@components/AddList/AddList';
-import { IProduct } from '@interfaces/product.interface';
-import { getMockProducts } from '@helpers/getMockProducts';
+import AddList from '@/components/AddList/AddList';
+import { IProduct } from '@/interfaces/product.interface';
+import { getMockProducts } from '@/helpers/getMockProducts';
 
 const mockEmptyProducts: IProduct[] = [];
 const mockProducts: IProduct[] = getMockProducts();

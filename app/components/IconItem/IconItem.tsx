@@ -1,9 +1,9 @@
 import { FC, HTMLAttributes } from 'react';
-import { IToolbar } from '@interfaces/toolbar.interface';
+import { IToolbar } from '@/interfaces/toolbar.interface';
 import classes from './IconItem.module.scss';
-import { ICartIcon } from '@interfaces/cartIcon.interface';
-import Sticker from '@components/Sticker/Sticker';
-import { usePurchases } from '@hooks/usePurchases';
+import { ICartIcon } from '@/interfaces/cartIcon.interface';
+import Sticker from '@/components/Sticker/Sticker';
+import { usePurchases } from '@/hooks/usePurchases';
 import { useRouter } from 'next/router';
 
 interface Props extends HTMLAttributes<HTMLLIElement> {

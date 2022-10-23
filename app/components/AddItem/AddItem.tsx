@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { IProduct } from '@interfaces/product.interface';
+import { IProduct } from '@/interfaces/product.interface';
 import classes from './AddItem.module.scss';
 import Image from 'next/image';
-import CounterProduct from '@components/CounterProduct/CounterProduct';
-import RemoveButton from '@components/RemoveButton/RemoveButton';
+import CounterProduct from '@/components/CounterProduct/CounterProduct';
+import RemoveButton from '@/components/RemoveButton/RemoveButton';
 import { useRouter } from 'next/router';
-import CustomMotion from '@components/CustomMotion/CustomMotion';
-import { fadeOutDown } from '@animations';
+import CustomMotion from '@/components/CustomMotion/CustomMotion';
+import { fadeOutDown } from '@/animations';
 
 type Props = {
   product: IProduct;

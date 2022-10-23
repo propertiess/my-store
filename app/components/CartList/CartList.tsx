@@ -1,8 +1,8 @@
 import { FC, HTMLAttributes, useEffect } from 'react';
-import IconItem from '@components/IconItem/IconItem';
-import { usePurchases } from '@hooks/usePurchases';
-import { useCartIcon } from '@hooks/useCartIcon';
-import { IProduct } from '@interfaces/product.interface';
+import IconItem from '@/components/IconItem/IconItem';
+import { usePurchases } from '@/hooks/usePurchases';
+import { useCartIcon } from '@/hooks/useCartIcon';
+import { IProduct } from '@/interfaces/product.interface';
 import classes from './CartList.module.scss';
 
 interface Props extends HTMLAttributes<unknown> {

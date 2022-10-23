@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import classes from './Products.module.scss';
-import ProductItem from '@components/ProductItem/ProductItem';
-import { IProduct } from '@interfaces/product.interface';
+import ProductItem from '@/components/ProductItem/ProductItem';
+import { IProduct } from '@/interfaces/product.interface';
 
 type Props = {
   products: IProduct[];

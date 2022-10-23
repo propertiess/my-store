@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes, ReactNode } from 'react';
 import classes from './ModalList.module.scss';
-import CustomMotion from '@components/CustomMotion/CustomMotion';
-import { leftFadeInOut } from '@animations';
+import CustomMotion from '@/components/CustomMotion/CustomMotion';
+import { leftFadeInOut } from '@/animations';
 import { AnimatePresence } from 'framer-motion';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {

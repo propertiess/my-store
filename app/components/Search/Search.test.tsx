@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import Search from '@components/Search/Search';
+import Search from '@/components/Search/Search';
 
 beforeEach(() => {
   render(<Search searchQuery={() => {}} />);

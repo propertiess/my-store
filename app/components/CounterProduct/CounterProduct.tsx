@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { usePurchases } from '@hooks/usePurchases';
+import { usePurchases } from '@/hooks/usePurchases';
 import classes from './CounterProduct.module.scss';
-import CustomMotion from '@components/CustomMotion/CustomMotion';
-import { scaleOnHoverAndTap } from '@animations';
+import CustomMotion from '@/components/CustomMotion/CustomMotion';
+import { scaleOnHoverAndTap } from '@/animations';
 
 type Props = {
   id: number;

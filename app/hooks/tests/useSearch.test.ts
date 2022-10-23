@@ -1,6 +1,6 @@
 import { act, cleanup, renderHook } from '@testing-library/react';
-import { getMockProducts } from '@helpers/getMockProducts';
-import { useSearch } from '@hooks/useSearch';
+import { getMockProducts } from '@/helpers/getMockProducts';
+import { useSearch } from '@/hooks/useSearch';
 
 const mockProducts = getMockProducts();
 

@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import StarList from '@components/StarList/StarList';
+import StarList from '@/components/StarList/StarList';
 
 afterEach(() => {
   cleanup();

@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
-import AddList from '@components/AddList/AddList';
-import { usePurchases } from '@hooks/usePurchases';
-import Layout from '@layout/Layout';
+import AddList from '@/components/AddList/AddList';
+import { usePurchases } from '@/hooks/usePurchases';
+import Layout from '@/layout/Layout';
 
 type Props = {};
 

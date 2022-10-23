@@ -1,4 +1,4 @@
-import { IProduct } from '@interfaces/product.interface';
+import { IProduct } from '@/interfaces/product.interface';
 import { createContext, FC, ReactNode, useEffect, useState } from 'react';
 
 type Purchases = {

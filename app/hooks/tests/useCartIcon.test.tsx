@@ -1,5 +1,5 @@
 import { act, cleanup, renderHook } from '@testing-library/react';
-import { useCartIcon } from '@hooks/useCartIcon';
+import { useCartIcon } from '@/hooks/useCartIcon';
 
 const mockData = [
   {

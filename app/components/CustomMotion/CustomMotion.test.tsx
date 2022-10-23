@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import CustomMotion from '@components/CustomMotion/CustomMotion';
+import CustomMotion from '@/components/CustomMotion/CustomMotion';
 
 beforeEach(() => {
   render(<CustomMotion data-testid='motion' element='div' />);

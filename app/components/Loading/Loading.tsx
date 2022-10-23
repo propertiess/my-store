@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import { ClipLoader } from 'react-spinners';
 import classes from './Loading.module.scss';
 import { AnimatePresence } from 'framer-motion';
-import CustomMotion from '@components/CustomMotion/CustomMotion';
-import { fadeInOut } from '@animations';
+import CustomMotion from '@/components/CustomMotion/CustomMotion';
+import { fadeInOut } from '@/animations';
 
 type Props = {};
 

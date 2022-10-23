@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AUTH } from '@utils/constants';
+import { AUTH } from '@/utils/constants';
 import Cookies from 'js-cookie';
 
 const instance = axios.create({

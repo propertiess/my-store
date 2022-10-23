@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { FC, ReactNode } from 'react';
-import Header from '@components/Header/Header';
-import Toolbar from '@components/Toolbar/Toolbar';
-import Loading from '@components/Loading/Loading';
+import Header from '@/components/Header/Header';
+import Toolbar from '@/components/Toolbar/Toolbar';
+import Loading from '@/components/Loading/Loading';
 import classes from './Layout.module.scss';
-import CustomMotion from '@components/CustomMotion/CustomMotion';
-import { fadeInUp } from '@animations';
+import CustomMotion from '@/components/CustomMotion/CustomMotion';
+import { fadeInUp } from '@/animations';
 
 type TLayout = {
   title: string;

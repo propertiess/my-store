@@ -1,11 +1,11 @@
 import React, { FC, HTMLAttributes } from 'react';
 import classes from './ProductItem.module.scss';
-import { IProduct } from '@interfaces/product.interface';
+import { IProduct } from '@/interfaces/product.interface';
 import Image from 'next/image';
-import { useArray } from '@hooks/useArray';
+import { useArray } from '@/hooks/useArray';
 import { useRouter } from 'next/router';
-import StarList from '@components/StarList/StarList';
-import CartList from '@components/CartList/CartList';
+import StarList from '@/components/StarList/StarList';
+import CartList from '@/components/CartList/CartList';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   product: IProduct;

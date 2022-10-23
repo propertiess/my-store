@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import classes from './LoginForm.module.scss';
-import { useClassName } from '@hooks/useClassName';
-import { AuthService } from '@services/auth/auth.service';
-import { ILogin } from '@interfaces/login.interface';
+import { useClassName } from '@/hooks/useClassName';
+import { AuthService } from '@/services/auth/auth.service';
+import { ILogin } from '@/interfaces/login.interface';
 import { useRouter } from 'next/router';
 
 const LoginForm: FC = () => {

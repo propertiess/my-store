@@ -1,8 +1,8 @@
-import { ILogin } from '@interfaces/login.interface';
-import instance from '@services/instance';
+import { ILogin } from '@/interfaces/login.interface';
+import instance from '@/services/instance';
 import jwtDecode from 'jwt-decode';
 import Cookies from 'js-cookie';
-import { AUTH } from '@utils/constants';
+import { AUTH } from '@/utils/constants';
 
 export const AuthService = {
   async login(field: ILogin) {

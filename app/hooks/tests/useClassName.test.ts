@@ -1,5 +1,5 @@
 import { act, cleanup, renderHook } from '@testing-library/react';
-import { useClassName } from '@hooks/useClassName';
+import { useClassName } from '@/hooks/useClassName';
 
 afterEach(() => {
   cleanup();

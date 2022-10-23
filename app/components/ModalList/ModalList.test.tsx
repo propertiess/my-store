@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import ModalList from '@components/ModalList/ModalList';
+import ModalList from '@/components/ModalList/ModalList';
 
 const renderWithProp = (prop: boolean) => {
   render(

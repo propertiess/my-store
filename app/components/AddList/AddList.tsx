@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { IProduct } from '@interfaces/product.interface';
-import AddItem from '@components/AddItem/AddItem';
+import { IProduct } from '@/interfaces/product.interface';
+import AddItem from '@/components/AddItem/AddItem';
 import classes from './AddList.module.scss';
-import { usePurchases } from '@hooks/usePurchases';
-import CustomMotion from '@components/CustomMotion/CustomMotion';
-import { fadeInUp } from '@animations';
+import { usePurchases } from '@/hooks/usePurchases';
+import CustomMotion from '@/components/CustomMotion/CustomMotion';
+import { fadeInUp } from '@/animations';
 import { AnimatePresence } from 'framer-motion';
 
 interface Props {

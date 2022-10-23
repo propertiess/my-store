@@ -1,4 +1,4 @@
-import { IToolbar } from '@interfaces/toolbar.interface';
+import { IToolbar } from '@/interfaces/toolbar.interface';
 import {
   HeartIcon as HeartIconOutline,
   HomeIcon as HomeIconOutline,

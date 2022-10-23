@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { IUser } from '@interfaces/user.interface';
+import { IUser } from '@/interfaces/user.interface';
 import classes from './ProfileItem.module.scss';
-import { AuthService } from '@services/auth/auth.service';
+import { AuthService } from '@/services/auth/auth.service';
 import { useRouter } from 'next/router';
 
 type Props = {

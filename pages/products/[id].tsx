@@ -2,12 +2,12 @@ import React from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ProductsService } from '@services/products/products.service';
-import { IProduct } from '@interfaces/product.interface';
-import Layout from '@layout/Layout';
-import classes from '@styles/Product.module.scss';
-import { useArray } from '@hooks/useArray';
-import CartList from '@components/CartList/CartList';
+import { ProductsService } from '@/services/products/products.service';
+import { IProduct } from '@/interfaces/product.interface';
+import Layout from '@/layout/Layout';
+import classes from '@/styles/Product.module.scss';
+import { useArray } from '@/hooks/useArray';
+import CartList from '@/components/CartList/CartList';
 
 type Props = {
   product: IProduct;

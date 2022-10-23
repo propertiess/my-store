@@ -1,5 +1,5 @@
 import { act, cleanup, renderHook } from '@testing-library/react';
-import { useModal } from '@hooks/useModal';
+import { useModal } from '@/hooks/useModal';
 
 afterEach(() => cleanup());
 

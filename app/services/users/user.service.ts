@@ -1,6 +1,6 @@
-import instance from '@services/instance';
-import { AUTH } from '@utils/constants';
-import { IUser, IUserBack } from '@interfaces/user.interface';
+import instance from '@/services/instance';
+import { AUTH } from '@/utils/constants';
+import { IUser, IUserBack } from '@/interfaces/user.interface';
 import jwtDecode from 'jwt-decode';
 
 export const UserService = {

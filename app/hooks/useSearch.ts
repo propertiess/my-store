@@ -1,4 +1,4 @@
-import { IProduct } from '@interfaces/product.interface';
+import { IProduct } from '@/interfaces/product.interface';
 import { useMemo, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 

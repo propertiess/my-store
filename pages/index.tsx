@@ -1,11 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next';
 
-import Layout from '@layout/Layout';
-import Products from '@components/Products/Products';
-import { ProductsService } from '@services/products/products.service';
-import { IProduct } from '@interfaces/product.interface';
-import Search from '@components/Search/Search';
-import { useSearch } from '@hooks/useSearch';
+import Layout from '@/layout/Layout';
+import Products from '@/components/Products/Products';
+import { ProductsService } from '@/services/products/products.service';
+import { IProduct } from '@/interfaces/product.interface';
+import Search from '@/components/Search/Search';
+import { useSearch } from '@/hooks/useSearch';
 
 interface Props {
   products: IProduct[];

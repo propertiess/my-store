@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from 'react';
-import { UserService } from '@services/users/user.service';
-import { useModal } from '@hooks/useModal';
+import { UserService } from '@/services/users/user.service';
+import { useModal } from '@/hooks/useModal';
 import { AnimatePresence } from 'framer-motion';
-import CustomMotion from '@components/CustomMotion/CustomMotion';
-import { fadeInOut } from '@animations';
-import { IDataForLogin } from '@interfaces/user.interface';
-import ParagraphData from '@components/ParagraphData/ParagraphData';
+import CustomMotion from '@/components/CustomMotion/CustomMotion';
+import { fadeInOut } from '@/animations';
+import { IDataForLogin } from '@/interfaces/user.interface';
+import ParagraphData from '@/components/ParagraphData/ParagraphData';
 import classes from './DataForLogin.module.scss';
 
 const DataForLogin: FC = () => {
