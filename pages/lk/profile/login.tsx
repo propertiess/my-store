@@ -1,14 +1,14 @@
 import { FC } from 'react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import { DataForLogin, LoginForm } from '@/components';
 import Layout from '@/layout/Layout';
 import { AUTH } from '@/utils/constants';
 
 type Props = {};
 
-const Login: FC<Props> = ({}) => {
+const Login: NextPage<Props> = () => {
   return (
-    <Layout title={'Login page'} description={`Page for login`}>
+    <Layout title='Login page' description='Page for login'>
       <LoginForm />
       <DataForLogin />
     </Layout>

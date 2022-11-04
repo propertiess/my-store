@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import { ProfileItem } from '@/components';
 import { IUser } from '@/interfaces/user.interface';
 import Layout from '@/layout/Layout';
@@ -9,7 +9,7 @@ type Props = {
   user: IUser;
 };
 
-const Profile: FC<Props> = ({ user }) => {
+const Profile: NextPage<Props> = ({ user }) => {
   return (
     <Layout title={user.username} description={`Page of user ${user.username}`}>
       <ProfileItem user={user} />

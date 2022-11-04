@@ -9,10 +9,10 @@ const Basket: NextPage<Props> = () => {
   const { basket } = usePurchases();
 
   return (
-    <Layout title={'Корзина'} description={'Корзина товаров пользователя'}>
+    <Layout title='Корзина' description='Корзина товаров пользователя'>
       <AddList
-        title={'Корзина'}
-        nothingTitle={'В корзине пока пусто'}
+        title='Корзина'
+        nothingTitle='В корзине пока пусто'
         products={basket.products}
         type='basket'
       />
