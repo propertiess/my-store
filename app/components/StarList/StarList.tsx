@@ -23,4 +23,4 @@ const StarList: FC<Props> = ({ quantity, ...other }) => {
   );
 };
 
-export default StarList;
+export { StarList };

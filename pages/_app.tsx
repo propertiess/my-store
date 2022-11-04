@@ -1,8 +1,8 @@
-import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
-import { PurchasesProvider } from '@/context/PurchasesContext';
-import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
+import { AnimatePresence } from 'framer-motion';
+import { PurchasesProvider } from '@/context/PurchasesContext';
+import '@/styles/globals.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();

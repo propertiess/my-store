@@ -23,4 +23,4 @@ const Search: FC<Props> = ({ searchQuery }) => {
   );
 };
 
-export default Search;
+export { Search };

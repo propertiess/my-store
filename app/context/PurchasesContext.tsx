@@ -1,15 +1,15 @@
+import { FC, ReactNode, createContext, useEffect, useState } from 'react';
 import { IProduct } from '@/interfaces/product.interface';
-import { createContext, FC, ReactNode, useEffect, useState } from 'react';
 
 type Purchases = {
   products: IProduct[];
 };
 
 interface IPurchasesContext {
-  favourite: Purchases;
+  favorite: Purchases;
   basket: Purchases;
   setBasket: (basket: Purchases) => void;
-  setFavourite: (favourite: Purchases) => void;
+  setFavorite: (favorite: Purchases) => void;
 }
 
 export const PurchasesContext = createContext({} as IPurchasesContext);
@@ -18,13 +18,13 @@ interface Props {
   children: ReactNode;
 }
 interface IPurchases {
-  favourite: Purchases;
+  favorite: Purchases;
   basket: Purchases;
 }
 
 export const PurchasesProvider: FC<Props> = ({ children }) => {
   const [purchases, setPurchases] = useState<IPurchases>({
-    favourite: {
+    favorite: {
       products: []
     },
     basket: {
@@ -51,13 +51,13 @@ export const PurchasesProvider: FC<Props> = ({ children }) => {
     );
   };
 
-  const setFavourite = (favourite: Purchases) => {
-    setPurchases({ ...purchases, favourite });
+  const setFavorite = (favorite: Purchases) => {
+    setPurchases({ ...purchases, favorite });
     localStorage.setItem(
       'purchases',
       JSON.stringify({
         ...purchases,
-        favourite
+        favorite
       })
     );
   };
@@ -65,10 +65,9 @@ export const PurchasesProvider: FC<Props> = ({ children }) => {
   return (
     <PurchasesContext.Provider
       value={{
-        basket: purchases.basket,
-        favourite: purchases.favourite,
+        ...purchases,
         setBasket,
-        setFavourite
+        setFavorite
       }}
     >
       {children}

@@ -1,11 +1,10 @@
 import { FC, useEffect, useState } from 'react';
-import { UserService } from '@/services/users/user.service';
-import { useModal } from '@/hooks/useModal';
-import { AnimatePresence } from 'framer-motion';
-import CustomMotion from '@/components/CustomMotion/CustomMotion';
-import { fadeInOut } from '@/animations';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ParagraphData } from '@/components';
+import { fadeInOut } from '@/animation';
+import { useModal } from '@/hooks';
 import { IDataForLogin } from '@/interfaces/user.interface';
-import ParagraphData from '@/components/ParagraphData/ParagraphData';
+import { UserService } from '@/services/users/user.service';
 import classes from './DataForLogin.module.scss';
 
 const DataForLogin: FC = () => {
@@ -22,26 +21,21 @@ const DataForLogin: FC = () => {
   }, []);
 
   return (
-    <CustomMotion element='div' layout className={classes.wrap}>
-      <CustomMotion
-        element='div'
-        layout
-        onClick={toggleShow}
-        className={classes.title}
-      >
+    <motion.div className={classes.wrap} layout>
+      <motion.div className={classes.title} onClick={toggleShow} layout>
         Open data for login
-      </CustomMotion>
+      </motion.div>
       <AnimatePresence mode='popLayout'>
         {isShow && (
-          <CustomMotion element='div' variants={fadeInOut}>
+          <motion.div {...fadeInOut}>
             {data?.map(el => (
               <ParagraphData key={el.username} data={el} />
             ))}
-          </CustomMotion>
+          </motion.div>
         )}
       </AnimatePresence>
-    </CustomMotion>
+    </motion.div>
   );
 };
 
-export default DataForLogin;
+export { DataForLogin };

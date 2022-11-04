@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
-import classes from './LoginForm.module.scss';
-import { useClassName } from '@/hooks/useClassName';
-import { AuthService } from '@/services/auth/auth.service';
-import { ILogin } from '@/interfaces/login.interface';
 import { useRouter } from 'next/router';
+import { useClassName } from '@/hooks';
+import { ILogin } from '@/interfaces/login.interface';
+import { AuthService } from '@/services/auth/auth.service';
+import classes from './LoginForm.module.scss';
 
 const LoginForm: FC = () => {
   const {
@@ -67,4 +67,4 @@ const LoginForm: FC = () => {
   );
 };
 
-export default LoginForm;
+export { LoginForm };

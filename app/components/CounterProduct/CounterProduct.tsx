@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { usePurchases } from '@/hooks/usePurchases';
+import { motion } from 'framer-motion';
+import { scaleOnHoverAndTap } from '@/animation';
+import { usePurchases } from '@/hooks';
 import classes from './CounterProduct.module.scss';
-import CustomMotion from '@/components/CustomMotion/CustomMotion';
-import { scaleOnHoverAndTap } from '@/animations';
 
 type Props = {
   id: number;
@@ -14,23 +14,21 @@ const CounterProduct: FC<Props> = ({ amount, id }) => {
 
   return (
     <div className={classes.counter} data-testid='counter-product'>
-      <CustomMotion
-        element='button'
-        variants={scaleOnHoverAndTap}
+      <motion.button
         onClick={() => setAmountBasketProduct(id, amount + 1)}
+        {...scaleOnHoverAndTap}
       >
         +
-      </CustomMotion>
+      </motion.button>
       <p>{amount}</p>
-      <CustomMotion
-        element='button'
-        variants={scaleOnHoverAndTap}
+      <motion.button
         onClick={() => setAmountBasketProduct(id, amount - 1)}
+        {...scaleOnHoverAndTap}
       >
         -
-      </CustomMotion>
+      </motion.button>
     </div>
   );
 };
 
-export default CounterProduct;
+export { CounterProduct };

@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import Sticker from '@/components/Sticker/Sticker';
+import { Sticker } from '@/components';
 
 afterEach(() => {
   cleanup();

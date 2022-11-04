@@ -1,22 +1,22 @@
+import { XMarkIcon } from '@heroicons/react/24/solid';
 import { FC } from 'react';
 import { usePurchases } from '@/hooks/usePurchases';
 import classes from './RemoveButton.module.scss';
-import { XMarkIcon } from '@heroicons/react/24/solid';
 
 type Props = {
   id: number;
-  type: 'basket' | 'favourite';
+  type: 'basket' | 'favorite';
 };
 
 const RemoveButton: FC<Props> = ({ id, type }) => {
-  const { removeFromBasket, removeFromFavourite } = usePurchases();
+  const { removeFromBasket, removeFromFavorite } = usePurchases();
 
-  if (type === 'favourite') {
+  if (type === 'favorite') {
     return (
       <button
         className={classes.btn}
         data-testid='remove-btn'
-        onClick={() => removeFromFavourite(id)}
+        onClick={() => removeFromFavorite(id)}
       >
         <XMarkIcon width={24} height={24} />
       </button>
@@ -34,4 +34,4 @@ const RemoveButton: FC<Props> = ({ id, type }) => {
   );
 };
 
-export default RemoveButton;
+export { RemoveButton };

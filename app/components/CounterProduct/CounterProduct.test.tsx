@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import CounterProduct from '@/components/CounterProduct/CounterProduct';
+import { CounterProduct } from '@/components';
 
 beforeEach(() => {
   render(<CounterProduct id={1} amount={1} />);

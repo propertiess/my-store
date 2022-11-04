@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { IUser } from '@/interfaces/user.interface';
-import classes from './ProfileItem.module.scss';
-import { AuthService } from '@/services/auth/auth.service';
 import { useRouter } from 'next/router';
+import { IUser } from '@/interfaces/user.interface';
+import { AuthService } from '@/services/auth/auth.service';
+import classes from './ProfileItem.module.scss';
 
 type Props = {
   user: IUser;
@@ -39,4 +39,4 @@ const ProfileItem: FC<Props> = ({ user }) => {
   );
 };
 
-export default ProfileItem;
+export { ProfileItem };

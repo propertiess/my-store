@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { AUTH } from '@/utils/constants';
 import Cookies from 'js-cookie';
+import { AUTH } from '@/utils/constants';
 
 const instance = axios.create({
   baseURL: 'https://fakestoreapi.com',

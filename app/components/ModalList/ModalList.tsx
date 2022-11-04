@@ -1,31 +1,30 @@
-import React, { FC, HTMLAttributes, ReactNode } from 'react';
+import { FC, HTMLAttributes, ReactNode } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { leftFadeInOut } from '@/animation';
 import classes from './ModalList.module.scss';
-import CustomMotion from '@/components/CustomMotion/CustomMotion';
-import { leftFadeInOut } from '@/animations';
-import { AnimatePresence } from 'framer-motion';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props {
   active: boolean;
+  onClick?: () => void;
   children?: ReactNode;
 }
 
-const ModalList: FC<Props> = ({ active, children, ...other }) => {
+const ModalList: FC<Props> = ({ active, children, onClick }) => {
   return (
     <AnimatePresence mode='popLayout'>
       {active && (
-        <CustomMotion
-          element='div'
-          variants={leftFadeInOut}
+        <motion.div
           className={classes.wrap}
-          {...other}
+          {...leftFadeInOut}
+          onClick={onClick}
         >
           <div className={classes.content} onClick={e => e.stopPropagation()}>
             {children}
           </div>
-        </CustomMotion>
+        </motion.div>
       )}
     </AnimatePresence>
   );
 };
 
-export default ModalList;
+export { ModalList };

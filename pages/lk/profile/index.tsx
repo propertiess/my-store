@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { GetServerSideProps } from 'next';
-import { UserService } from '@/services/users/user.service';
+import { ProfileItem } from '@/components';
 import { IUser } from '@/interfaces/user.interface';
 import Layout from '@/layout/Layout';
-import ProfileItem from '@/components/ProfileItem/ProfileItem';
+import { UserService } from '@/services/users/user.service';
 
 type Props = {
   user: IUser;

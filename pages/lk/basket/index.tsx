@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
-import AddList from '@/components/AddList/AddList';
-import { usePurchases } from '@/hooks/usePurchases';
+import { AddList } from '@/components';
+import { usePurchases } from '@/hooks';
 import Layout from '@/layout/Layout';
 
 type Props = {};

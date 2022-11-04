@@ -14,4 +14,4 @@ const Sticker: FC<Props> = ({ value, ...other }) => {
   );
 };
 
-export default Sticker;
+export { Sticker };

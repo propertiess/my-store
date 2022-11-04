@@ -3,7 +3,7 @@ import { PurchasesContext } from '@/context/PurchasesContext';
 import { IProduct } from '@/interfaces/product.interface';
 
 export const usePurchases = () => {
-  const { setBasket, setFavourite, basket, favourite } =
+  const { setBasket, setFavorite, basket, favorite } =
     useContext(PurchasesContext);
 
   const addToBasket = (product: IProduct) => {
@@ -13,10 +13,10 @@ export const usePurchases = () => {
     });
   };
 
-  const addToFavourite = (product: IProduct) => {
-    setFavourite({
-      ...favourite,
-      products: [...favourite.products, product]
+  const addToFavorite = (product: IProduct) => {
+    setFavorite({
+      ...favorite,
+      products: [...favorite.products, product]
     });
   };
 
@@ -43,10 +43,10 @@ export const usePurchases = () => {
     });
   };
 
-  const removeFromFavourite = (id: number) => {
-    setFavourite({
-      ...favourite,
-      products: favourite.products.filter(el => el.id !== id)
+  const removeFromFavorite = (id: number) => {
+    setFavorite({
+      ...favorite,
+      products: favorite.products.filter(el => el.id !== id)
     });
   };
 
@@ -69,11 +69,11 @@ export const usePurchases = () => {
 
   return {
     addToBasket,
-    addToFavourite,
+    addToFavorite,
     removeFromBasket,
-    removeFromFavourite,
+    removeFromFavorite,
     setAmountBasketProduct,
-    favourite,
+    favorite,
     basket,
     getFinalSum,
     getQuantityBasketProducts

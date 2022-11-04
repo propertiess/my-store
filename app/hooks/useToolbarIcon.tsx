@@ -1,4 +1,3 @@
-import { IToolbar } from '@/interfaces/toolbar.interface';
 import {
   HeartIcon as HeartIconOutline,
   HomeIcon as HomeIconOutline,
@@ -13,6 +12,7 @@ import {
 } from '@heroicons/react/24/solid';
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import { IToolbar } from '@/interfaces/toolbar.interface';
 
 const TOOLBAR_COLOR = {
   color: 'purple'
@@ -34,7 +34,7 @@ export const useToolbarIcon = () => {
     },
     {
       id: 3,
-      path: '/lk/favourite',
+      path: '/lk/favorite',
       outline: <HeartIconOutline {...TOOLBAR_COLOR} />,
       solid: <HeartIconSolid {...TOOLBAR_COLOR} />
     },

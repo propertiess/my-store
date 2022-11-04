@@ -1,5 +1,5 @@
-import instance from '@/services/instance';
 import { IProduct } from '@/interfaces/product.interface';
+import instance from '@/services/instance';
 
 export const ProductsService = {
   async fetchProducts() {

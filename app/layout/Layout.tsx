@@ -1,11 +1,9 @@
-import Head from 'next/head';
 import { FC, ReactNode } from 'react';
-import Header from '@/components/Header/Header';
-import Toolbar from '@/components/Toolbar/Toolbar';
-import Loading from '@/components/Loading/Loading';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { Header, Loading, Toolbar } from '@/components';
+import { fadeInUp } from '@/animation';
 import classes from './Layout.module.scss';
-import CustomMotion from '@/components/CustomMotion/CustomMotion';
-import { fadeInUp } from '@/animations';
 
 type TLayout = {
   title: string;
@@ -22,10 +20,10 @@ const Layout: FC<TLayout> = ({ title, description, children }) => {
       </Head>
       <Header />
       <main className={classes.main}>
-        <CustomMotion element='section' variants={fadeInUp}>
+        <motion.section {...fadeInUp}>
           <Loading />
           {children}
-        </CustomMotion>
+        </motion.section>
       </main>
       <footer></footer>
       <Toolbar />

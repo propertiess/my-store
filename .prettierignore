@@ -1,0 +1,10 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+build
+.next
+.idea
+.vscode
+coverage
+dist

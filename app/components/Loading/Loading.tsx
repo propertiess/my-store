@@ -1,10 +1,9 @@
 import { FC, useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import { ClipLoader } from 'react-spinners';
+import { useRouter } from 'next/router';
+import { AnimatePresence, motion } from 'framer-motion';
+import { fadeInOut } from '@/animation';
 import classes from './Loading.module.scss';
-import { AnimatePresence } from 'framer-motion';
-import CustomMotion from '@/components/CustomMotion/CustomMotion';
-import { fadeInOut } from '@/animations';
 
 type Props = {};
 
@@ -33,17 +32,13 @@ const Loading: FC<Props> = ({}) => {
     <>
       <AnimatePresence mode={'wait'}>
         {loading && (
-          <CustomMotion
-            className={classes.wrap}
-            element='div'
-            variants={fadeInOut}
-          >
+          <motion.div className={classes.wrap} {...fadeInOut}>
             <ClipLoader className={classes.loader} />
-          </CustomMotion>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
   );
 };
 
-export default Loading;
+export { Loading };

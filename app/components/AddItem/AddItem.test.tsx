@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import AddItem from '@/components/AddItem/AddItem';
+import { AddItem } from '@/components';
 import { IProduct } from '@/interfaces/product.interface';
 
 const mockProduct: IProduct = {
@@ -39,7 +39,7 @@ describe('AddItem', () => {
 
   test('with type favourite counter products not to be in the document', () => {
     cleanup();
-    render(<AddItem product={mockProduct} type='favourite' />);
+    render(<AddItem product={mockProduct} type='favorite' />);
     const counterEl = screen.queryByTestId('counter-product');
     expect(counterEl).not.toBeInTheDocument();
   });

@@ -1,7 +1,7 @@
+import Cookies from 'js-cookie';
+import jwtDecode from 'jwt-decode';
 import { ILogin } from '@/interfaces/login.interface';
 import instance from '@/services/instance';
-import jwtDecode from 'jwt-decode';
-import Cookies from 'js-cookie';
 import { AUTH } from '@/utils/constants';
 
 export const AuthService = {

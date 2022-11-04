@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import LoginForm from '@/components/LoginForm/LoginForm';
-import { AUTH } from '@/utils/constants';
 import { GetServerSideProps } from 'next';
+import { DataForLogin, LoginForm } from '@/components';
 import Layout from '@/layout/Layout';
-import DataForLogin from '@/components/DataForLogin/DataForLogin';
+import { AUTH } from '@/utils/constants';
 
 type Props = {};
 

@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import ProductItem from '@/components/ProductItem/ProductItem';
+import { ProductItem } from '@/components';
 import { IProduct } from '@/interfaces/product.interface';
 
 const mockProduct: IProduct = {

@@ -18,4 +18,4 @@ const ParagraphData: FC<Props> = ({ data }) => {
   );
 };
 
-export default ParagraphData;
+export { ParagraphData };

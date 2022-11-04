@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import classes from './Products.module.scss';
-import ProductItem from '@/components/ProductItem/ProductItem';
+import { ProductItem } from '@/components';
 import { IProduct } from '@/interfaces/product.interface';
+import classes from './Products.module.scss';
 
 type Props = {
   products: IProduct[];
@@ -17,4 +17,4 @@ const Products: FC<Props> = ({ products }) => {
   );
 };
 
-export default Products;
+export { Products };

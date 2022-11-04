@@ -1,6 +1,6 @@
-import { IProduct } from '@/interfaces/product.interface';
 import { useMemo, useState } from 'react';
 import { useDebounce } from 'use-debounce';
+import { IProduct } from '@/interfaces/product.interface';
 
 export const useSearch = (products: IProduct[]) => {
   const [search, setSearch] = useState('');

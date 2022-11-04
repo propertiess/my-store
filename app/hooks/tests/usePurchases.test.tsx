@@ -1,7 +1,7 @@
-import { usePurchases } from '@/hooks/usePurchases';
 import { act, cleanup, renderHook } from '@testing-library/react';
-import { PurchasesProvider } from '@/context/PurchasesContext';
 import { ReactNode } from 'react';
+import { PurchasesProvider } from '@/context/PurchasesContext';
+import { usePurchases } from '@/hooks/usePurchases';
 import { IProduct } from '@/interfaces/product.interface';
 
 const mockProduct: IProduct = {
@@ -38,12 +38,12 @@ afterAll(cleanup);
 describe('Purchases', () => {
   test('defined', () => {
     expect(result.current.basket).toBeDefined();
-    expect(result.current.favourite).toBeDefined();
+    expect(result.current.favorite).toBeDefined();
   });
 
   test('have props products, which is equal []', () => {
     expect(result.current.basket.products).toEqual([]);
-    expect(result.current.favourite.products).toEqual([]);
+    expect(result.current.favorite.products).toEqual([]);
   });
 
   test('getFinalSum work correctly', () => {
@@ -69,22 +69,22 @@ describe('Purchases', () => {
   });
 });
 
-describe('Favourite', () => {
+describe('Favorite', () => {
   test('added products correctly', () => {
-    expect(result.current.favourite.products.length).toBe(0);
+    expect(result.current.favorite.products.length).toBe(0);
 
     act(() => {
-      result.current.addToFavourite(mockProduct);
+      result.current.addToFavorite(mockProduct);
     });
-    expect(result.current.favourite.products.length).toBe(1);
-    expect(result.current.favourite.products[0]).toEqual(mockProduct);
+    expect(result.current.favorite.products.length).toBe(1);
+    expect(result.current.favorite.products[0]).toEqual(mockProduct);
 
     act(() => {
-      result.current.addToFavourite(mockProduct);
+      result.current.addToFavorite(mockProduct);
     });
-    expect(result.current.favourite.products.length).toBe(2);
+    expect(result.current.favorite.products.length).toBe(2);
 
-    expect(result.current.favourite.products).toEqual([
+    expect(result.current.favorite.products).toEqual([
       { ...mockProduct },
       { ...mockProduct }
     ]);
@@ -92,13 +92,13 @@ describe('Favourite', () => {
 
   test('remove products correctly', () => {
     act(() => {
-      result.current.addToFavourite(mockProduct);
+      result.current.addToFavorite(mockProduct);
     });
 
     act(() => {
-      result.current.removeFromFavourite(1);
+      result.current.removeFromFavorite(1);
     });
-    expect(result.current.favourite.products).toEqual([]);
+    expect(result.current.favorite.products).toEqual([]);
   });
 });
 

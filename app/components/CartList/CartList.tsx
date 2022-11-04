@@ -1,7 +1,6 @@
 import { FC, HTMLAttributes, useEffect } from 'react';
-import IconItem from '@/components/IconItem/IconItem';
-import { usePurchases } from '@/hooks/usePurchases';
-import { useCartIcon } from '@/hooks/useCartIcon';
+import { IconItem } from '@/components';
+import { useCartIcon, usePurchases } from '@/hooks';
 import { IProduct } from '@/interfaces/product.interface';
 import classes from './CartList.module.scss';
 
@@ -10,14 +9,14 @@ interface Props extends HTMLAttributes<unknown> {
 }
 
 const CartList: FC<Props> = ({ product, ...other }) => {
-  const { basket, favourite, addToFavourite, addToBasket } = usePurchases();
+  const { basket, favorite, addToFavorite, addToBasket } = usePurchases();
   const { cartIcons, setAdded } = useCartIcon();
 
   const handler = (id: number, added: boolean) => {
     if (added) return;
     setAdded(id);
     if (id === 1) {
-      addToFavourite({ ...product, amount: 1 });
+      addToFavorite({ ...product, amount: 1 });
     } else if (id === 2) {
       addToBasket({ ...product, amount: 1 });
     }
@@ -33,15 +32,15 @@ const CartList: FC<Props> = ({ product, ...other }) => {
       });
     }
 
-    if (!favourite) return;
-    if (Array.isArray(favourite.products)) {
-      favourite.products?.forEach(el => {
+    if (!favorite) return;
+    if (Array.isArray(favorite.products)) {
+      favorite.products?.forEach(el => {
         if (el.id === product.id) {
           setAdded(1);
         }
       });
     }
-  }, [basket, favourite]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [basket, favorite]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className={classes.addToCart} {...other}>
@@ -50,7 +49,7 @@ const CartList: FC<Props> = ({ product, ...other }) => {
           <IconItem
             key={item.id}
             item={item}
-            data-testid={'icons'}
+            data-testid='icons'
             onClick={() => handler(item.id, item.added)}
           />
         ))}
@@ -59,4 +58,4 @@ const CartList: FC<Props> = ({ product, ...other }) => {
   );
 };
 
-export default CartList;
+export { CartList };

@@ -1,17 +1,17 @@
 import { FC, HTMLAttributes } from 'react';
+import { useRouter } from 'next/router';
+import { Sticker } from '@/components';
+import { usePurchases } from '@/hooks/usePurchases';
+import { ICartIcon } from '@/interfaces/cartIcon.interface';
 import { IToolbar } from '@/interfaces/toolbar.interface';
 import classes from './IconItem.module.scss';
-import { ICartIcon } from '@/interfaces/cartIcon.interface';
-import Sticker from '@/components/Sticker/Sticker';
-import { usePurchases } from '@/hooks/usePurchases';
-import { useRouter } from 'next/router';
 
 interface Props extends HTMLAttributes<HTMLLIElement> {
   item: IToolbar | ICartIcon;
 }
 
 const IconItem: FC<Props> = ({ item, ...other }) => {
-  const { getQuantityBasketProducts, favourite } = usePurchases();
+  const { getQuantityBasketProducts, favorite } = usePurchases();
   const router = useRouter();
   const condition = (item as IToolbar)?.path === router?.asPath;
   const conditionLogin =
@@ -26,8 +26,8 @@ const IconItem: FC<Props> = ({ item, ...other }) => {
           {(item as IToolbar).path === '/lk/basket' && (
             <Sticker value={getQuantityBasketProducts} />
           )}
-          {(item as IToolbar).path === '/lk/favourite' && (
-            <Sticker value={favourite?.products.length} />
+          {(item as IToolbar).path === '/lk/favorite' && (
+            <Sticker value={favorite?.products.length} />
           )}
         </li>
       ) : (
@@ -36,8 +36,8 @@ const IconItem: FC<Props> = ({ item, ...other }) => {
           {(item as IToolbar).path === '/lk/basket' && (
             <Sticker value={getQuantityBasketProducts} />
           )}
-          {(item as IToolbar).path === '/lk/favourite' && (
-            <Sticker value={favourite?.products.length} />
+          {(item as IToolbar).path === '/lk/favorite' && (
+            <Sticker value={favorite?.products.length} />
           )}
         </li>
       )}
@@ -45,4 +45,4 @@ const IconItem: FC<Props> = ({ item, ...other }) => {
   );
 };
 
-export default IconItem;
+export { IconItem };

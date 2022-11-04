@@ -1,10 +1,8 @@
-import { FC } from 'react';
-import classes from './Header.module.scss';
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import { useModal } from '@/hooks/useModal';
-import ModalList from '@/components/ModalList/ModalList';
-import IconItem from '@/components/IconItem/IconItem';
-import { useToolbarIcon } from '@/hooks/useToolbarIcon';
+import { FC } from 'react';
+import { IconItem, ModalList } from '@/components';
+import { useModal, useToolbarIcon } from '@/hooks';
+import classes from './Header.module.scss';
 
 type Props = {};
 
@@ -44,4 +42,4 @@ const Header: FC<Props> = ({}) => {
   );
 };
 
-export default Header;
+export { Header };

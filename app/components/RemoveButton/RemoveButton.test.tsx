@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import RemoveButton from '@/components/RemoveButton/RemoveButton';
+import { RemoveButton } from '@/components';
 
 beforeEach(() => {
   render(<RemoveButton id={1} type={'basket'} />);

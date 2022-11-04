@@ -1,21 +1,21 @@
 import { FC } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { AddItem } from '@/components';
+import { fadeInUp } from '@/animation';
+import { usePurchases } from '@/hooks';
 import { IProduct } from '@/interfaces/product.interface';
-import AddItem from '@/components/AddItem/AddItem';
 import classes from './AddList.module.scss';
-import { usePurchases } from '@/hooks/usePurchases';
-import CustomMotion from '@/components/CustomMotion/CustomMotion';
-import { fadeInUp } from '@/animations';
-import { AnimatePresence } from 'framer-motion';
 
 interface Props {
   title: string;
   nothingTitle: string;
   products: IProduct[];
-  type: 'basket' | 'favourite';
+  type: 'basket' | 'favorite';
 }
 
 const AddList: FC<Props> = ({ title, nothingTitle, products, type }) => {
   const { getFinalSum } = usePurchases();
+
   return (
     <div className={classes.wrap} data-testid='addList'>
       {!!products.length ? (
@@ -26,21 +26,20 @@ const AddList: FC<Props> = ({ title, nothingTitle, products, type }) => {
       {!!getFinalSum && type === 'basket' && (
         <p className={classes.finalSum}>Итого: $ {getFinalSum}</p>
       )}
-      <CustomMotion
-        element={'ul'}
-        variants={fadeInUp}
-        layout
+      <motion.ul
         className={classes.list}
         data-testid='list-addItem'
+        layout
+        {...fadeInUp}
       >
         <AnimatePresence mode='popLayout'>
           {products.map(prod => (
             <AddItem key={prod.id} product={prod} type={type} />
           ))}
         </AnimatePresence>
-      </CustomMotion>
+      </motion.ul>
     </div>
   );
 };
 
-export default AddList;
+export { AddList };

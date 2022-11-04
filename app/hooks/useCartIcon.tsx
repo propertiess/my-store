@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { ICartIcon } from '@/interfaces/cartIcon.interface';
 import {
   HeartIcon as HeartIconOutline,
   ShoppingCartIcon as ShoppingCartIconOutline
@@ -8,6 +6,8 @@ import {
   HeartIcon as HeartIconSolid,
   ShoppingCartIcon as ShoppingCartIconSolid
 } from '@heroicons/react/24/solid';
+import { useState } from 'react';
+import { ICartIcon } from '@/interfaces/cartIcon.interface';
 
 const CART_COLOR = {
   color: 'white'

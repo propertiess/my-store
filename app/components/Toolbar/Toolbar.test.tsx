@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import Toolbar from '@/components/Toolbar/Toolbar';
+import { Toolbar } from '@/components';
 
 beforeEach(() => {
   render(<Toolbar />);
