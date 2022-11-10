@@ -1,5 +1,6 @@
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import { FC } from 'react';
+import Link from 'next/link';
 import { IconItem, ModalList } from '@/components';
 import { useModal, useToolbarIcon } from '@/hooks';
 import classes from './Header.module.scss';
@@ -8,7 +9,7 @@ type Props = {};
 
 const Header: FC<Props> = ({}) => {
   const { isShow, toggleShow } = useModal(false);
-  const { toolBars, setActiveItem } = useToolbarIcon();
+  const { toolBars } = useToolbarIcon();
 
   return (
     <>
@@ -28,14 +29,15 @@ const Header: FC<Props> = ({}) => {
       </header>
       <ModalList active={isShow} onClick={toggleShow}>
         {toolBars.map(el => (
-          <IconItem
-            key={el.id}
-            item={el}
-            onClick={() => {
-              toggleShow();
-              setActiveItem(el.path);
-            }}
-          />
+          <Link key={el.id} href={el.path} prefetch={false}>
+            <IconItem
+              key={el.id}
+              item={el}
+              onClick={() => {
+                toggleShow();
+              }}
+            />
+          </Link>
         ))}
       </ModalList>
     </>

@@ -10,8 +10,7 @@ import {
   ShoppingBagIcon as ShoppingCartIconSolid,
   UserIcon as UserIconSolid
 } from '@heroicons/react/24/solid';
-import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
+import { useRef } from 'react';
 import { IToolbar } from '@/interfaces/toolbar.interface';
 
 const TOOLBAR_COLOR = {
@@ -46,18 +45,7 @@ export const useToolbarIcon = () => {
     }
   ]);
 
-  const router = useRouter();
-
-  useEffect(() => {
-    if (router) setActiveItem(router.asPath);
-  }, []); // eslint-disable-line
-
-  const setActiveItem = (pathName: string) => {
-    let ignore = router.push(pathName);
-  };
-
   return {
-    toolBars: toolBars.current,
-    setActiveItem
+    toolBars: toolBars.current
   };
 };
